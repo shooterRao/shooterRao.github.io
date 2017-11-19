@@ -188,7 +188,7 @@ body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 14px;
   line-height: 2;
-  color: #555;
+  color: #000;
   background: #f5f7f9;
 }
 @media (max-width: 767px) {
@@ -277,15 +277,15 @@ p {
   margin: 0 0 20px 0;
 }
 a {
-  color: #555;
+  color: #000;
   text-decoration: none;
   outline: none;
   border-bottom: 1px solid #999;
   word-wrap: break-word;
 }
 a:hover {
-  color: #222;
-  border-bottom-color: #222;
+  color: #129292;
+  border-bottom-color: #129292;
 }
 blockquote {
   margin: 0;
@@ -498,7 +498,7 @@ code {
 code {
   padding: 2px 4px;
   word-wrap: break-word;
-  color: #555;
+  color: #000;
   background: #eee;
   border-radius: 3px;
   font-size: 13px;
@@ -921,7 +921,7 @@ pre .javascript .function {
 }
 .post-body .tabs ul.nav-tabs li.tab.active a {
   cursor: default;
-  color: #555;
+  color: #000;
 }
 .post-body .tabs .tab-content {
   background-color: #fff;
@@ -940,9 +940,9 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 20px;
   font-size: 14px;
-  color: #555;
+  color: #000;
   background: #fff;
-  border: 2px solid #555;
+  border: 2px solid #000;
   text-decoration: none;
   border-radius: 2px;
   transition-property: background-color;
@@ -952,9 +952,9 @@ pre .javascript .function {
   line-height: 2;
 }
 .btn:hover {
-  border-color: #222;
+  border-color: #129292;
   color: #fff;
-  background: #222;
+  background: #129292;
 }
 .btn +.btn {
   margin: 0 0 8px 8px;
@@ -967,7 +967,7 @@ pre .javascript .function {
   display: block;
   width: 22px;
   height: 2px;
-  background: #555;
+  background: #000;
   border-radius: 1px;
 }
 .btn-bar+.btn-bar {
@@ -1011,7 +1011,7 @@ pre .javascript .function {
 .pagination .prev:hover,
 .pagination .next:hover,
 .pagination .page-number:hover {
-  border-top-color: #222;
+  border-top-color: #129292;
 }
 .pagination .space {
   padding: 0;
@@ -1043,7 +1043,7 @@ pre .javascript .function {
   .pagination .prev:hover,
   .pagination .next:hover,
   .pagination .page-number:hover {
-    border-bottom-color: #222;
+    border-bottom-color: #129292;
   }
 }
 .comments {
@@ -1064,7 +1064,7 @@ pre .javascript .function {
   z-index: 1050;
   padding: 0 6px;
   width: 24px;
-  background: #222;
+  background: #129292;
   font-size: 12px;
   opacity: 0.6;
   color: #fff;
@@ -1097,7 +1097,7 @@ pre .javascript .function {
 }
 .headband {
   height: 3px;
-  background: #222;
+  background: #129292;
 }
 .site-meta {
   margin: 0;
@@ -1113,7 +1113,7 @@ pre .javascript .function {
   display: inline-block;
   padding: 0 40px;
   color: #fff;
-  background: #222;
+  background: #129292;
   border-bottom: none;
 }
 .brand:hover {
@@ -1211,7 +1211,7 @@ pre .javascript .function {
 }
 .menu .menu-item a:hover,
 .menu-item-active a {
-  border-bottom-color: #222;
+  border-bottom-color: #129292;
 }
 .menu .menu-item .fa {
   margin-right: 5px;
@@ -1422,7 +1422,7 @@ pre .javascript .function {
   border-bottom-color: #666;
 }
 .posts-collapse .post-header:hover::before {
-  background: #222;
+  background: #129292;
 }
 .posts-collapse .post-meta {
   position: absolute;
@@ -1461,7 +1461,7 @@ pre .javascript .function {
 .posts-expand .post-title-link {
   display: inline-block;
   position: relative;
-  color: #555;
+  color: #000;
   border-bottom: none;
   line-height: 1.2;
   vertical-align: top;
@@ -1578,11 +1578,11 @@ pre .javascript .function {
   display: block;
   line-height: 25px;
   font-size: 14px;
-  color: #555;
+  color: #000;
   border-bottom: none;
 }
 .post-nav-item a:hover {
-  color: #222;
+  color: #129292;
   border-bottom: none;
 }
 .post-nav-item a:active {
@@ -1667,12 +1667,12 @@ pre .javascript .function {
   width: 0;
   z-index: 1040;
   box-shadow: inset 0 2px 6px #000;
-  background: #222;
+  background: #129292;
   -webkit-transform: translateZ(0);
 }
 .sidebar a {
   color: #999;
-  border-bottom-color: #555;
+  border-bottom-color: #000;
 }
 .sidebar a:hover {
   color: #eee;
@@ -1707,7 +1707,7 @@ pre .javascript .function {
   width: 14px;
   height: 14px;
   padding: 5px;
-  background: #222;
+  background: #129292;
   line-height: 0;
   z-index: 1050;
   cursor: pointer;
@@ -1746,7 +1746,7 @@ pre .javascript .function {
 .site-author-name {
   margin: 0;
   text-align: center;
-  color: #222;
+  color: #129292;
   font-weight: 600;
 }
 .site-description {
@@ -1812,7 +1812,7 @@ pre .javascript .function {
   vertical-align: middle;
   margin-right: 10px;
   margin-bottom: 10px;
-  border-bottom-color: #555;
+  border-bottom-color: #000;
   font-size: 13px;
 }
 .links-of-author a:before {
@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b49436;
+  background: #87ff04;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1858,7 +1858,7 @@ pre .javascript .function {
   cursor: pointer;
   border-bottom: 1px solid transparent;
   font-size: 14px;
-  color: #555;
+  color: #000;
 }
 .sidebar-nav li:hover {
   color: #fc6423;
@@ -2390,7 +2390,7 @@ pre .javascript .function {
   width: 10px;
   height: 10px;
   opacity: 0.5;
-  background: #555;
+  background: #000;
   border: 1px solid #fff;
   border-radius: 50%;
 }
@@ -2753,7 +2753,7 @@ pre .javascript .function {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #222;
+  background: #129292;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -2856,7 +2856,7 @@ pre .javascript .function {
 .sidebar-inner {
   box-sizing: border-box;
   width: 240px;
-  color: #555;
+  color: #000;
   background: #fff;
   box-shadow: initial;
   border-radius: initial;
@@ -2882,10 +2882,10 @@ pre .javascript .function {
   clear: both;
 }
 .sidebar a {
-  color: #555;
+  color: #000;
 }
 .sidebar a:hover {
-  color: #222;
+  color: #129292;
 }
 .site-state-item {
   padding: 0 10px;
