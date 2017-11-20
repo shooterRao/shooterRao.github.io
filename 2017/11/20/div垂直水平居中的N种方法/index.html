@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。 注意布局都是123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用">
+<meta name="description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。注意布局123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用，先M">
 <meta name="keywords" content="css 布局">
 <meta property="og:type" content="article">
 <meta property="og:title" content="div垂直水平居中的N种方法">
 <meta property="og:url" content="http://yoursite.com/2017/11/20/div垂直水平居中的N种方法/index.html">
 <meta property="og:site_name" content="Rao Jinwei&#39;s Blog">
-<meta property="og:description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。 注意布局都是123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用">
+<meta property="og:description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。注意布局123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用，先M">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-20T14:28:43.859Z">
+<meta property="og:updated_time" content="2017-11-20T16:08:21.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="div垂直水平居中的N种方法">
-<meta name="twitter:description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。 注意布局都是123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用">
+<meta name="twitter:description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。注意布局123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用，先M">
 
 
 
@@ -320,18 +320,34 @@
       
 
       
-        <h1 id="div垂直水平居中的N种方法"><a href="#div垂直水平居中的N种方法" class="headerlink" title="div垂直水平居中的N种方法"></a>div垂直水平居中的N种方法</h1><p>div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。</p>
-<p><strong>注意布局都是</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;content&quot;&gt;</div><div class="line">&lt;div class=&quot;content-div&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="已知div高度和宽度的情况下"><a href="#已知div高度和宽度的情况下" class="headerlink" title="(已知div高度和宽度的情况下)"></a>(已知div高度和宽度的情况下)</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>这种方法对于我来说不常用，先Mark<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">#content &#123;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">#content-div &#123;</div><div class="line">    position: absolute;</div><div class="line">    margin: auto;</div><div class="line">    top: 0;</div><div class="line">    bottom: 0;</div><div class="line">    left: 0;</div><div class="line">    right: 0</div><div class="line">&#125;</div><div class="line">``` </div><div class="line">#### 方法二</div><div class="line">这种方法很好理解，用得也比较多，运用百分比和宽高的负一半实现水平垂直居中</div></pre></td></tr></table></figure></p>
-<p>#content {<br>    position: relative;<br>}</p>
-<p>#content-div {<br>    position: absolute;<br>    top: 50%;<br>    left :50%;<br>    margin-left: -(宽度1/2)px;<br>    margin-top : -(高度1/2)px;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">### 不知道div高度和宽度情况下</div><div class="line">#### 方法一</div><div class="line">display-table 比较经典的居中方法</div></pre></td></tr></table></figure></p>
-<p>body {<br>    display: table;<br>}</p>
-<p>#content {<br>    display: table-cell;<br>    vertical-align: middle;<br>}</p>
-<p>#content-div {<br>    margin: 0 auto;<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#### 方法二</div><div class="line">css transform，不方便的是根据浏览器不同需要写些前缀</div></pre></td></tr></table></figure></p>
-<p>#content {<br>    position: relative;<br>}</p>
-<p>#content-div {<br>    position: absolute;<br>    top: 50%;<br>    left: 50%;<br>    transform: translate(-50%,-50%);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 方法三</div><div class="line">这是最快最方便的方法了，写flex布局建议配合postcssd的Autoprefixer插件来写，效率会很高</div></pre></td></tr></table></figure></p>
-<p>#content {<br>    display: flex;<br>    justify-content: center;<br>    align-items: center;<br>}<br>```</p>
-
+        <h1 id="div垂直水平居中的N种方法"><a href="#div垂直水平居中的N种方法" class="headerlink" title="div垂直水平居中的N种方法"></a>div垂直水平居中的N种方法</h1><h4 id="div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。"><a href="#div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。" class="headerlink" title="div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。"></a>div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。</h4><p><strong>注意布局</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;content&quot;&gt;</div><div class="line">&lt;div class=&quot;content-div&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="已知div高度和宽度的情况下"><a href="#已知div高度和宽度的情况下" class="headerlink" title="(已知div高度和宽度的情况下)"></a>(已知div高度和宽度的情况下)</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>这种方法对于我来说不常用，先Mar</p>
+<pre><code>.content {
+    position: relative;
+}
+.content-div {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+</code></pre><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>这种方法很好理解，用得也比较多，运用百分比和宽高的负一半实现水平垂直居中</p>
+<pre><code>.content {
+    position: relative;
+}
+.content-div {
+    position: absolute;
+    top: 50%;
+    left :50%;
+    margin-left: -(宽度1/2)px;
+    margin-top : -(高度1/2)px;
+}
+</code></pre><h3 id="不知道div高度和宽度情况下"><a href="#不知道div高度和宽度情况下" class="headerlink" title="不知道div高度和宽度情况下"></a>不知道div高度和宽度情况下</h3><h4 id="方法一-1"><a href="#方法一-1" class="headerlink" title="方法一"></a>方法一</h4><p>display-table 比较经典的居中方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    display: table;</div><div class="line">&#125;</div><div class="line">.content &#123;</div><div class="line">    display: table-cell;</div><div class="line">    vertical-align: middle;</div><div class="line">&#125;</div><div class="line">.content-div &#123;</div><div class="line">    margin: 0 auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="方法二-1"><a href="#方法二-1" class="headerlink" title="方法二"></a>方法二</h4><p>css transform，不方便的是根据浏览器不同需要写些前缀<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.content &#123;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">.content-div &#123;</div><div class="line">    position: absolute;</div><div class="line">    top: 50%;</div><div class="line">    left: 50%;</div><div class="line">    transform: translate(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><p>这是最快最方便的方法了，写flex布局建议配合postcssd的Autoprefixer插件来写，效率会很高<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.content &#123;</div><div class="line">    display: flex;</div><div class="line">    justify-content: center;</div><div class="line">    align-items: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><h3 id="以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累"><a href="#以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累" class="headerlink" title="以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累"></a>以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累</h3><h4 id="ps-不知道为什么，写MD文档用-这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。"><a href="#ps-不知道为什么，写MD文档用-这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。" class="headerlink" title="(ps:不知道为什么，写MD文档用```这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。)"></a>(ps:不知道为什么，写MD文档用```这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。)</h4>
       
     </div>
     
@@ -503,7 +519,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#div垂直水平居中的N种方法"><span class="nav-number">1.</span> <span class="nav-text">div垂直水平居中的N种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#已知div高度和宽度的情况下"><span class="nav-number">1.0.1.</span> <span class="nav-text">(已知div高度和宽度的情况下)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">方法一</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#div垂直水平居中的N种方法"><span class="nav-number">1.</span> <span class="nav-text">div垂直水平居中的N种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#已知div高度和宽度的情况下"><span class="nav-number">1.0.1.</span> <span class="nav-text">(已知div高度和宽度的情况下)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不知道div高度和宽度情况下"><span class="nav-number">1.0.2.</span> <span class="nav-text">不知道div高度和宽度情况下</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一-1"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">方法三</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">1.0.3.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累"><span class="nav-number">1.0.4.</span> <span class="nav-text">以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ps-不知道为什么，写MD文档用-这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">(ps:不知道为什么，写MD文档用```这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。)</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
