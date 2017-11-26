@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="css 布局," />
+  <meta name="keywords" content="重构,react," />
 
 
 
@@ -86,18 +86,21 @@
 
 
 
-<meta name="description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。注意布局123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用，先M">
-<meta name="keywords" content="css 布局">
+<meta name="description" content="采用react-navigation方案重构项目代码总结 前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在">
+<meta name="keywords" content="重构,react">
 <meta property="og:type" content="article">
-<meta property="og:title" content="div垂直水平居中的N种方法">
-<meta property="og:url" content="http://yoursite.com/2017/11/20/div垂直水平居中的N种方法/index.html">
+<meta property="og:title" content="运用react-navigation重构项目总结">
+<meta property="og:url" content="http://yoursite.com/2017/11/26/运用react-navigation重构项目总结/index.html">
 <meta property="og:site_name" content="Rao Jinwei&#39;s Blog">
-<meta property="og:description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。注意布局123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用，先M">
+<meta property="og:description" content="采用react-navigation方案重构项目代码总结 前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-20T16:10:05.403Z">
+<meta property="og:image" content="http://yoursite.com/images/G1.png">
+<meta property="og:image" content="http://yoursite.com/images/G2.png">
+<meta property="og:updated_time" content="2017-11-26T08:49:40.033Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="div垂直水平居中的N种方法">
-<meta name="twitter:description" content="div垂直水平居中的N种方法div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。注意布局123&amp;lt;div class=&amp;quot;content&amp;quot;&amp;gt;&amp;lt;div class=&amp;quot;content-div&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt; (已知div高度和宽度的情况下)方法一这种方法对于我来说不常用，先M">
+<meta name="twitter:title" content="运用react-navigation重构项目总结">
+<meta name="twitter:description" content="采用react-navigation方案重构项目代码总结 前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在">
+<meta name="twitter:image" content="http://yoursite.com/images/G1.png">
 
 
 
@@ -127,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/20/div垂直水平居中的N种方法/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/26/运用react-navigation重构项目总结/"/>
 
 
 
 
 
-  <title>div垂直水平居中的N种方法 | Rao Jinwei's Blog</title>
+  <title>运用react-navigation重构项目总结 | Rao Jinwei's Blog</title>
   
 
 
@@ -265,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/20/div垂直水平居中的N种方法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/26/运用react-navigation重构项目总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rao Jinwei">
@@ -282,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">div垂直水平居中的N种方法</h1>
+          <h1 class="post-title" itemprop="name headline">运用react-navigation重构项目总结</h1>
         
 
         <div class="post-meta">
@@ -294,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-20T21:53:17+08:00">
-                2017-11-20
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-26T15:49:24+08:00">
+                2017-11-26
               </time>
             
 
@@ -304,6 +307,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/重构/" itemprop="url" rel="index">
+                    <span itemprop="name">重构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -332,34 +357,67 @@
       
 
       
-        <h1 id="div垂直水平居中的N种方法"><a href="#div垂直水平居中的N种方法" class="headerlink" title="div垂直水平居中的N种方法"></a>div垂直水平居中的N种方法</h1><h4 id="div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。"><a href="#div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。" class="headerlink" title="div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。"></a>div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。</h4><p><strong>注意布局</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;content&quot;&gt;</div><div class="line">&lt;div class=&quot;content-div&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="已知div高度和宽度的情况下"><a href="#已知div高度和宽度的情况下" class="headerlink" title="(已知div高度和宽度的情况下)"></a>(已知div高度和宽度的情况下)</h3><h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><p>这种方法对于我来说不常用，先Mark</p>
-<pre><code>.content {
-    position: relative;
-}
-.content-div {
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-</code></pre><h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><p>这种方法很好理解，用得也比较多，运用百分比和宽高的负一半实现水平垂直居中</p>
-<pre><code>.content {
-    position: relative;
-}
-.content-div {
-    position: absolute;
-    top: 50%;
-    left :50%;
-    margin-left: -(宽度1/2)px;
-    margin-top : -(高度1/2)px;
-}
-</code></pre><h3 id="不知道div高度和宽度情况下"><a href="#不知道div高度和宽度情况下" class="headerlink" title="不知道div高度和宽度情况下"></a>不知道div高度和宽度情况下</h3><h4 id="方法一-1"><a href="#方法一-1" class="headerlink" title="方法一"></a>方法一</h4><p>display-table 比较经典的居中方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">body &#123;</div><div class="line">    display: table;</div><div class="line">&#125;</div><div class="line">.content &#123;</div><div class="line">    display: table-cell;</div><div class="line">    vertical-align: middle;</div><div class="line">&#125;</div><div class="line">.content-div &#123;</div><div class="line">    margin: 0 auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="方法二-1"><a href="#方法二-1" class="headerlink" title="方法二"></a>方法二</h4><p>css transform，不方便的是根据浏览器不同需要写些前缀<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.content &#123;</div><div class="line">    position: relative;</div><div class="line">&#125;</div><div class="line">.content-div &#123;</div><div class="line">    position: absolute;</div><div class="line">    top: 50%;</div><div class="line">    left: 50%;</div><div class="line">    transform: translate(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h4><p>这是最快最方便的方法了，写flex布局建议配合postcssd的Autoprefixer插件来写，效率会很高<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.content &#123;</div><div class="line">    display: flex;</div><div class="line">    justify-content: center;</div><div class="line">    align-items: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><h3 id="以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累"><a href="#以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累" class="headerlink" title="以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累"></a>以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累</h3><h4 id="ps-不知道为什么，写MD文档用-这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。"><a href="#ps-不知道为什么，写MD文档用-这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。" class="headerlink" title="(ps:不知道为什么，写MD文档用```这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。)"></a>(ps:不知道为什么，写MD文档用```这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。)</h4>
+        <h1 id="采用react-navigation方案重构项目代码总结"><a href="#采用react-navigation方案重构项目代码总结" class="headerlink" title="采用react-navigation方案重构项目代码总结"></a>采用react-navigation方案重构项目代码总结</h1><hr>
+<p>前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—<strong>react-navigation</strong>，来取代之前用的react官方提供的页面导航器<strong>Navigator</strong>。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在这里总结一下重构过程吧。</p>
+<h2 id="Question：为什么要重构？"><a href="#Question：为什么要重构？" class="headerlink" title="Question：为什么要重构？"></a>Question：为什么要重构？</h2><p>首先，重构不是老大要求的，而是我提出来的并得到允许才进行的。为什么我要提出要抛弃Navigator？有几点：</p>
+<blockquote>
+<ul>
+<li>react-native官方提供的页面导航器组件Navigator性能非常不好，这点官方也承认了，在react-native<strong>0.44</strong>版本之后已经删掉了这个组件，并推荐使用第三方组件<strong>react-navigation</strong>。</li>
+<li>在我用Navigator实际项目开发中，就感觉到了它的不友好，性能非常差。特别是开启Chrome远程调试的时候，在页面跳转中会导致整个程序的卡死，崩溃，所以我只能用Android Studio来看debug，然而Android Studio查看JSON数据很是蛋疼，不能像Chrome那样可以格式化JSON，所以非常影响我的开发效率。</li>
+<li>react-navigation就是为了解决这个问题而生的，据称性能非常接近原生，我写了几个demo发现确实解决了我之前遇到的问题。</li>
+<li>既然官方已经宣布不再维护Navigator，如果项目在往后要升级react-native版本，那就必须放弃Navigator这个组件。</li>
+</ul>
+</blockquote>
+<h2 id="重构前的准备"><a href="#重构前的准备" class="headerlink" title="重构前的准备"></a>重构前的准备</h2><p>大家都知道，想要重构底层的代码，就首先要把项目结构弄得非常熟悉，尽量不要影响上层的业务代码，不然bug多得修到你想吐=。=</p>
+<p>（本来想用七牛云图床来展示分析导图的，但是注册七牛云要绑定域名，域名购买还是审核实名制，总之今天是用不了图床的了orz…）<br>算了，就用文字 + 代码来说说吧…</p>
+<p><img src="/images/G1.png" alt="&quot;基本逻辑&quot;">  </p>
+<p>之前的项目整个页面跳转都是通过Navigator来维护的，所有的页面跳转和通讯通过AppService类提供的静态方法进行，再细点页面跳转和数据传递都是使用<code>AppService.forward</code>这个方法实现。其中，<br><code>AppService.forward(Route)</code>，这个方法会接收<code>Route</code>对象，这个对象的结构是<code>{name:&#39;&#39;,dest:&#39;&#39;,param:{}}</code>,name是获取的数据的接口名,dest是页面名,param是传递的参数。</p>
+<pre><code>页面A--(to)---&gt;Navigator[AppService.forward(Route)]--(to)---&gt;页面B
+</code></pre><h2 id="开始重构"><a href="#开始重构" class="headerlink" title="开始重构"></a>开始重构</h2><p>弄清了项目的设计结构，就要开始着手替换<code>Navigator</code>的计划了。首先，我要做到的就是要用最小的成本来实现组件的替换。当前项目的页面结构分为多个模块，每个模块下又具分为多个子页面，都是<code>模块名_页面具名.js</code>。在<code>app.js</code>,也就是根文件下，会全局注册模块页面，然后通过<code>AppService.forward(页面具名)</code>来进行跳转，这就是Navigator的实现方式。我只有<strong>用react-navigation实现页面跳转的方法和Navigator实现方法一致</strong>，才能最大程度的减少项目的重构成本，毕竟在外层的代码有太多太多是用到<code>Appservice.forward(Route)</code>这个方法了。</p>
+<h3 id="关于页面跳转的实现"><a href="#关于页面跳转的实现" class="headerlink" title="关于页面跳转的实现"></a>关于页面跳转的实现</h3><p><code>react-navigation</code>提供的页面跳转方法只要是通过<code>StackNavigator</code>这个api来实现的:<br></p>
+<p><code>StackNavigator(RouteConfigs, StackNavigatorConfig)</code><br><br><strong>下面只给出demo</strong></p>
+<pre><code>const Navs = StackNavigator({
+    页面名:{screen: (页面.js)},
+    页面名:{screen: (页面.js)},
+    页面名:{screen: (页面.js)},
+    ...
+},{
+    编写基本配置...
+    如跳转动画选择，
+    导航栏显示方式，
+    还有页面回调等等
+})
+
+跳转就是使用
+this.props.navigation.navigate(&apos;页面名&apos;,{参数})来实现
+</code></pre><p><img src="/images/G2.png" alt="&quot;基本逻辑&quot;"></p>
+<p>我在<code>app.js</code>里面全局注册StackNavigator, 并改写了一个<code>function</code>来格式化装有<strong>页面名.js</strong>对象的数据格式，让这个对象的数据结构为<code>{页面名:{screen: (页面名.js)},...}</code>，初始化页面默认为<strong>start.js(登录页)</strong>。</p>
+<h3 id="关于页面数据传递的实现"><a href="#关于页面数据传递的实现" class="headerlink" title="关于页面数据传递的实现"></a>关于页面数据传递的实现</h3><p>完成了页面跳转，接下来就要实现页面之间的数据了。</p>
+<p>在使用Navigator的时候，数据都存放在<code>Route.param</code>对象里面，然后在跳转目标页面里面通过<code>this.props.route.param</code>来获取传来的数据。</p>
+<p>在react-navigation中，数据是通过props.navigation.navigate这个api来进行传递的，比如：</p>
+<pre><code>页面A---&gt;this.props.navigation.navigate(&apos;页面B&apos;，{参数})---&gt;页面B
+
+在页面B内可以通过this.props.navigation.state.params来接收参数
+</code></pre><p>现在，我就按照这种思路，重写了<code>AppService.forward()</code>这个函数，还有在<code>BasePage.js（ps:拥有子页面框架的js）</code>也做了大量修改。页面的跳转和数据传递，还是通过<code>AppService.forward(Route)</code>这种形式来传，<code>Route</code>对象的数据结构保持不变，一切的逻辑都在底层的AppService这个类里面进行重写和改造，分点实现是这样的:</p>
+<blockquote>
+<ul>
+<li>props.route 替换为 props.navigation.state.params</li>
+<li>this.props.route.param替换为this.props.navigation.state.params.param</li>
+</ul>
+</blockquote>
+<p>现在，在页面B是通过<code>this.props.navigation.state.params.param</code>来获取参数，这样，基本实现了从最底层无缝地用react-navigation替换掉Navigator。</p>
+<h3 id="关于数据请求接口name字段的处理"><a href="#关于数据请求接口name字段的处理" class="headerlink" title="关于数据请求接口name字段的处理"></a>关于数据请求接口name字段的处理</h3><p>在页面跳转过程中，如果<code>Appservice.forward(Route)</code>中<code>Route</code>里面有<code>name</code>字段，跳转的目标页面会根据这个接口<code>name</code>来请求数据，所以，我在AppService类中同样做了处理,基本是这样的:</p>
+<pre><code>// 优先处理name字段
+let param = {};
+Route.name ? param加入name字段 : param加入dest和param字段
+AppService.forward(&apos;页面名&apos;,param);
+
+注意，这里AppService.forward已经被我封装好了，相当于
+
+AppService.forward == this.props.navigation.navigate
+</code></pre><p>当然，具体的代码还是有很多业务逻辑判断来进行处理的，加上额外的组件有一些方法也需要进行重写，上面只是简单地说明了name的处理方法。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在公司的新项目中，这套react-natvigation方案已经开始使用，解决了chrome调试崩溃的问题，大大提高了开发效率。说真的，项目重构学到的知识还是很多的，比如，重构的过程中，我对react的使用有了更深的了解，在项目重构前，我做了不少关于react-navigation的demo，查阅了有关react-navigation的<a href="https://reactnavigation.org/docs/intro/" target="_blank" rel="external">文档</a>，还有<a href="http://blog.csdn.net/sinat_17775997/article/details/70176688" target="_blank" rel="external">博客</a>。对react-navigation的使用也越加熟悉。其实重构要做的不仅仅上面说的这些，还是有些耦合度有点高的组件，得一个个解耦，只有真正做到最大程度组件间的解耦，才能更好地维护项目代码。如何去降低代码之间的耦合度，也是一个非常值得探索的方向。</p>
+
       
     </div>
     
@@ -385,7 +443,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css-布局/" rel="tag"># css 布局</a>
+            <a href="/tags/重构/" rel="tag"># 重构</a>
+          
+            <a href="/tags/react/" rel="tag"># react</a>
           
         </div>
       
@@ -398,8 +458,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/09/VsCode常用开发插件/" rel="next" title="VsCode常用开发插件">
-                <i class="fa fa-chevron-left"></i> VsCode常用开发插件
+              <a href="/2017/11/20/div垂直水平居中的N种方法/" rel="next" title="div垂直水平居中的N种方法">
+                <i class="fa fa-chevron-left"></i> div垂直水平居中的N种方法
               </a>
             
           </div>
@@ -407,10 +467,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/26/运用react-navigation重构项目总结/" rel="prev" title="运用react-navigation重构项目总结">
-                运用react-navigation重构项目总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -544,7 +600,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#div垂直水平居中的N种方法"><span class="nav-number">1.</span> <span class="nav-text">div垂直水平居中的N种方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">div动态垂直水平居中的方法有很多种，每种实现的方法都值得学习，今天就在这里总结下。</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#已知div高度和宽度的情况下"><span class="nav-number">1.0.1.</span> <span class="nav-text">(已知div高度和宽度的情况下)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">方法二</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不知道div高度和宽度情况下"><span class="nav-number">1.0.2.</span> <span class="nav-text">不知道div高度和宽度情况下</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一-1"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法三"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">方法三</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结语"><span class="nav-number">1.0.3.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累"><span class="nav-number">1.0.4.</span> <span class="nav-text">以上都是很实用的div垂直水平居中方法，多练练，多写写，多积累</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ps-不知道为什么，写MD文档用-这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">(ps:不知道为什么，写MD文档用```这种来标记代码块用多了会出现生成文档错乱的情况，用4个空格反而解决了这种问题，折腾到了12点多终于搞好了。。。)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#采用react-navigation方案重构项目代码总结"><span class="nav-number">1.</span> <span class="nav-text">采用react-navigation方案重构项目代码总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question：为什么要重构？"><span class="nav-number">1.1.</span> <span class="nav-text">Question：为什么要重构？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构前的准备"><span class="nav-number">1.2.</span> <span class="nav-text">重构前的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始重构"><span class="nav-number">1.3.</span> <span class="nav-text">开始重构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于页面跳转的实现"><span class="nav-number">1.3.1.</span> <span class="nav-text">关于页面跳转的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于页面数据传递的实现"><span class="nav-number">1.3.2.</span> <span class="nav-text">关于页面数据传递的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于数据请求接口name字段的处理"><span class="nav-number">1.3.3.</span> <span class="nav-text">关于数据请求接口name字段的处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
