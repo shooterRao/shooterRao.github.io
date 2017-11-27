@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="webpack," />
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="寻找生活的影子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="开始学习webpack3.X不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack 3.0 学习笔记(一)">
+<meta property="og:url" content="http://yoursite.com/2017/11/27/webpack 3.0 学习笔记(一)/index.html">
 <meta property="og:site_name" content="Rao Jinwei&#39;s Blog">
-<meta property="og:description" content="寻找生活的影子">
+<meta property="og:description" content="开始学习webpack3.X不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-04T04:07:33.519Z">
+<meta property="og:updated_time" content="2017-11-27T15:33:08.787Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分类">
-<meta name="twitter:description" content="寻找生活的影子">
+<meta name="twitter:title" content="webpack 3.0 学习笔记(一)">
+<meta name="twitter:description" content="开始学习webpack3.X不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记">
 
 
 
@@ -126,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/27/webpack 3.0 学习笔记(一)/"/>
 
 
 
 
 
-  <title>分类 | Rao Jinwei's Blog</title>
+  <title>webpack 3.0 学习笔记(一) | Rao Jinwei's Blog</title>
   
 
 
@@ -252,40 +253,181 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/27/webpack 3.0 学习笔记(一)/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rao Jinwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rao Jinwei's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">分类</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 3 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Tool/">Tool</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/webpack/">webpack</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/重构/">重构</a><span class="category-list-count">1</span></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">webpack 3.0 学习笔记(一)</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-27T23:09:36+08:00">
+                2017-11-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="开始学习webpack3-X"><a href="#开始学习webpack3-X" class="headerlink" title="开始学习webpack3.X"></a>开始学习webpack3.X</h2><p>不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记</p>
+<a id="more"></a>
+<p><strong>前期准备</strong></p>
+<h4 id="1-npm-install-webpack-g-全局安装"><a href="#1-npm-install-webpack-g-全局安装" class="headerlink" title="1.npm install webpack -g (全局安装)"></a>1.npm install webpack -g (全局安装)</h4><h4 id="2-创一个文件夹-npm-init-然后接着npm-install-webpack-–save-dev-局部安装"><a href="#2-创一个文件夹-npm-init-然后接着npm-install-webpack-–save-dev-局部安装" class="headerlink" title="2.创一个文件夹, npm init 然后接着npm install webpack –save-dev (局部安装)"></a>2.创一个文件夹, npm init 然后接着npm install webpack –save-dev (局部安装)</h4><h4 id="3-分别创建dist-src两个文件夹"><a href="#3-分别创建dist-src两个文件夹" class="headerlink" title="3.分别创建dist, src两个文件夹"></a>3.分别创建dist, src两个文件夹</h4><h4 id="4-在根目录下创建webpack-config-js"><a href="#4-在根目录下创建webpack-config-js" class="headerlink" title="4.在根目录下创建webpack.config.js"></a>4.在根目录下创建webpack.config.js</h4><h2 id="配置webpack-config-js"><a href="#配置webpack-config-js" class="headerlink" title="配置webpack.config.js"></a>配置webpack.config.js</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">const</span> UglifyJs = <span class="built_in">require</span>(<span class="string">'uglifyjs-webpack-plugin'</span>);</div><div class="line"><span class="keyword">const</span> htmlPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        entry:<span class="string">'./src/entry.js'</span>,</div><div class="line">       <span class="comment">// entry2:'./src/entry2.js' </span></div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: path.resolve(__dirname,<span class="string">'dist'</span>),</div><div class="line">        filename: <span class="string">'[name].js'</span> <span class="comment">//对应entry的属性名 </span></div><div class="line">    &#125;,</div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        <span class="comment">// 配置loader</span></div><div class="line">        <span class="comment">// style-loader(处理路径),css-loader(处理标签)</span></div><div class="line">        rules:[</div><div class="line">            &#123;</div><div class="line">                test: <span class="regexp">/\.css$/</span>,</div><div class="line">               <span class="comment">// use: ['style-loader','css-loader']</span></div><div class="line">                use : [&#123;</div><div class="line">                    loader:<span class="string">'style-loader'</span></div><div class="line">                &#125;,&#123;</div><div class="line">                    loader:<span class="string">'css-loader'</span></div><div class="line">                &#125;]</div><div class="line">            &#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">       <span class="comment">// 配置插件</span></div><div class="line">      <span class="comment">//  new UglifyJs(), // 压缩代码</span></div><div class="line">        <span class="keyword">new</span> htmlPlugin(&#123;</div><div class="line">            minify:&#123;</div><div class="line">                removeAttributeQuotes: <span class="literal">true</span></div><div class="line">            &#125;,</div><div class="line">            hash: <span class="literal">true</span>, <span class="comment">// 哈希，不产生缓存</span></div><div class="line">            template: <span class="string">'./src/index.html'</span> <span class="comment">// 入口文件</span></div><div class="line">        &#125;)</div><div class="line">    ],<span class="comment">// 插件</span></div><div class="line">    devServer: &#123;</div><div class="line">        contentBase:path.resolve(__dirname,<span class="string">'dist'</span>),</div><div class="line">        host:<span class="string">''</span>, <span class="comment">// host</span></div><div class="line">        compress:<span class="literal">true</span>,<span class="comment">// 是否启用服务器压缩</span></div><div class="line">        port:<span class="number">8088</span> <span class="comment">// 端口</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>我比较喜欢代码+注释这种方式来记录笔记，这样看起来不会那么乏味</p>
+<p>最后，在package.json的scripts中添加<code>&quot;server&quot;: &quot;webpack-dev-server&quot;</code>，<br>这个主要是可以通过<code>npm run server</code>方式来开启webpack提供的服务,热更新在新版本的webpack已经默认开启了</p>
+<h2 id="本篇小结"><a href="#本篇小结" class="headerlink" title="本篇小结"></a>本篇小结</h2><p>webpack3.0往后的版本配置简洁了不少，蛮好的，这篇暂时就写这么多，有空会继续更新~</p>
+
       
     </div>
     
     
     
+	
+	<div>
+  
+    <div>
+    
+        <div style="text-align:center;color: #000;font-size:14px;">-------------<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/26/运用react-navigation重构项目总结/" rel="next" title="运用react-navigation重构项目总结">
+                <i class="fa fa-chevron-left"></i> 运用react-navigation重构项目总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -318,8 +460,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -381,6 +532,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始学习webpack3-X"><span class="nav-number">1.</span> <span class="nav-text">开始学习webpack3.X</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-npm-install-webpack-g-全局安装"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.npm install webpack -g (全局安装)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创一个文件夹-npm-init-然后接着npm-install-webpack-–save-dev-局部安装"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.创一个文件夹, npm init 然后接着npm install webpack –save-dev (局部安装)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-分别创建dist-src两个文件夹"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.分别创建dist, src两个文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-在根目录下创建webpack-config-js"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.在根目录下创建webpack.config.js</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置webpack-config-js"><span class="nav-number">2.</span> <span class="nav-text">配置webpack.config.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本篇小结"><span class="nav-number">3.</span> <span class="nav-text">本篇小结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
