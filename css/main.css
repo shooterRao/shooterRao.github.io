@@ -1823,7 +1823,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffb1ff;
+  background: #773470;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3131,9 +3131,6 @@ pre .javascript .function {
 #canvas {
   width: 100%;
   height: 100%;
-}
-.header {
-  background: transparent;
 }
 .pace .pace-progress {
   background: #222; /*进度条颜色*/
