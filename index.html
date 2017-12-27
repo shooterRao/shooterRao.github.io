@@ -264,6 +264,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/27/用React-Native+Mobx做一个迷你水果商城APP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rao Jinwei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Rao Jinwei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/12/27/用React-Native+Mobx做一个迷你水果商城APP/" itemprop="url">用React-Native+Mobx做一个迷你水果商城APP</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-27T22:57:50+08:00">
+                2017-12-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react-native/" itemprop="url" rel="index">
+                    <span itemprop="name">react-native</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近一直在学习微信小程序，在学习过程中，看到了<a href="https://github.com/lin-xin/wxapp-mall" target="_blank" rel="external">wxapp-mall</a>这个微信小程序的项目，觉得很不错，UI挺小清新的，便clone下来研究研究，在看源码过程中，发现并不复杂，用不多的代码来实现丰富的功能确实令我十分惊喜，于是，我就想，如果用react-native来做一个类似这种小项目难不难呢，何况，写一套代码还能同时跑Android和IOS（小程序也是。。。），要不写一个来玩玩？有了这个想法，我便直接react-native init 一个project来写一下吧(๑•̀ㅂ•́)و✧</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/12/27/用React-Native+Mobx做一个迷你水果商城APP/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+	
+	<div>
+  
+</div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/10/关于函数节流和函数去抖的实现/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -670,7 +819,7 @@
 <h2 id="重构前的准备"><a href="#重构前的准备" class="headerlink" title="重构前的准备"></a>重构前的准备</h2><p>大家都知道，想要重构底层的代码，就首先要把项目结构弄得非常熟悉，尽量不要影响上层的业务代码，不然bug多得修到你想吐=。=</p>
 <p>（本来想用七牛云图床来展示分析导图的，但是注册七牛云要绑定域名，域名购买还是审核实名制，总之今天是用不了图床的了orz…）<br>算了，就用文字 + 代码来说说吧…</p>
 <p><img src="/images/G1.png" alt="&quot;基本逻辑&quot;">  </p>
-<p>之前的项目整个页面跳转都是通过Navigator来维护的，所有的页面跳转和通讯通过AppService类提供的静态方法进行，再细点页面跳转和数据传递都是使用<code>AppService.forward</code>这个方法实现。其中，<br><code>AppService.forward(Route)</code>，这个方法会接收<code>Route</code>对象，这个对象的结构是<code>{name:&#39;&#39;,dest:&#39;&#39;,param:{}}</code>,name是获取的数据的接口名,dest是页面名,param是传递的参数。</p>
+<p>之前的项目整个页面跳转都是通过Navigator来维护的，所有的页面跳转和通讯通过AppService类提供的静态方法进行，再细点页面跳转和数据传递都是使用<code>AppService.forward</code>这个方法实现。其中，<br><code>AppService.forward(Route)</code>，这个方法会接收<code>Route</code>对象，这个对象的结构是<code>{name:&#39;&#39;,dest:&#39;&#39;,param:{}}</code>,<code>name</code>是获取的数据的接口名,<code>dest</code>是页面名,<code>param</code>是传递的参数。</p>
 <pre><code>页面A--(to)---&gt;Navigator[AppService.forward(Route)]--(to)---&gt;页面B
 </code></pre><h2 id="开始重构"><a href="#开始重构" class="headerlink" title="开始重构"></a>开始重构</h2><p>弄清了项目的设计结构，就要开始着手替换<code>Navigator</code>的计划了。首先，我要做到的就是要用最小的成本来实现组件的替换。当前项目的页面结构分为多个模块，每个模块下又具分为多个子页面，都是<code>模块名_页面具名.js</code>。在<code>app.js</code>,也就是根文件下，会全局注册模块页面，然后通过<code>AppService.forward(页面具名)</code>来进行跳转，这就是Navigator的实现方式。我只有<strong>用react-navigation实现页面跳转的方法和Navigator实现方法一致</strong>，才能最大程度的减少项目的重构成本，毕竟在外层的代码有太多太多是用到<code>Appservice.forward(Route)</code>这个方法了。</p>
 <h3 id="关于页面跳转的实现"><a href="#关于页面跳转的实现" class="headerlink" title="关于页面跳转的实现"></a>关于页面跳转的实现</h3><p><code>react-navigation</code>提供的页面跳转方法只要是通过<code>StackNavigator</code>这个api来实现的:<br></p>
@@ -690,14 +839,15 @@
 跳转就是使用
 this.props.navigation.navigate(&apos;页面名&apos;,{参数})来实现
 </code></pre><p><img src="/images/G2.png" alt="&quot;基本逻辑&quot;"></p>
-<p>我在<code>app.js</code>里面全局注册StackNavigator, 并改写了一个<code>function</code>来格式化装有<strong>页面名.js</strong>对象的数据格式，让这个对象的数据结构为<code>{页面名:{screen: (页面名.js)},...}</code>，初始化页面默认为<strong>start.js(登录页)</strong>。</p>
+<p>我在<code>app.js</code>里面全局注册StackNavigator, 并改写了一个<code>function</code>来格式化装有<strong>页面名.js</strong>对象的数据格式，让这个对象的数据结构为<code>{页面名:{screen: (页面名.js)},...}</code>(这是<code>react-navigation</code>规定的)，初始化页面默认为<strong>start.js(登录页)</strong>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 格式化成&#123;wd.home:&#123;screen:wd.home&#125;&#125;</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">initPages</span>(<span class="params">pages</span>) </span>&#123;</div><div class="line">	<span class="comment">// pages是一个包含所有项目页面引用的对象</span></div><div class="line">	<span class="keyword">let</span> allPages = &#123;&#125;;</div><div class="line">	<span class="keyword">let</span> obj = &#123;&#125;;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> pages)&#123;</div><div class="line">		obj = &#123;<span class="attr">screen</span>: pages[key]&#125;;</div><div class="line">		allPages[<span class="string">`<span class="subst">$&#123;key&#125;</span>`</span>] = obj</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> allPages</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> screenPages = initPages(AppService.pages);</div><div class="line"></div><div class="line"><span class="keyword">const</span> Navs = StackNavigator(</div><div class="line">    &#123;</div><div class="line">	start:&#123;<span class="attr">screen</span>:start&#125;,</div><div class="line">	...screenPages</div><div class="line">    &#125;, </div><div class="line">    ...</div><div class="line">)</div></pre></td></tr></table></figure>
 <h3 id="关于页面数据传递的实现"><a href="#关于页面数据传递的实现" class="headerlink" title="关于页面数据传递的实现"></a>关于页面数据传递的实现</h3><p>完成了页面跳转，接下来就要实现页面之间的数据了。</p>
 <p>在使用Navigator的时候，数据都存放在<code>Route.param</code>对象里面，然后在跳转目标页面里面通过<code>this.props.route.param</code>来获取传来的数据。</p>
 <p>在react-navigation中，数据是通过props.navigation.navigate这个api来进行传递的，比如：</p>
 <pre><code>页面A---&gt;this.props.navigation.navigate(&apos;页面B&apos;，{参数})---&gt;页面B
 
 在页面B内可以通过this.props.navigation.state.params来接收参数
-</code></pre><p>现在，我就按照这种思路，重写了<code>AppService.forward()</code>这个函数，还有在<code>BasePage.js（ps:拥有子页面框架的js）</code>也做了大量修改。页面的跳转和数据传递，还是通过<code>AppService.forward(Route)</code>这种形式来传，<code>Route</code>对象的数据结构保持不变，一切的逻辑都在底层的AppService这个类里面进行重写和改造，分点实现是这样的:</p>
+</code></pre><p>现在，我就按照这种思路，重写了<code>AppService.forward()</code>这个函数，还有在<code>BasePage.js（ps:用于页面继承的类）</code>也做了大量修改。页面的跳转和数据传递，还是通过<code>AppService.forward(Route)</code>这种形式来传，<code>Route</code>对象的数据结构保持不变，一切的逻辑都在底层的AppService这个类里面进行重写和改造，分点实现是这样的:</p>
 <blockquote>
 <ul>
 <li>props.route 替换为 props.navigation.state.params</li>
@@ -1117,7 +1267,7 @@ AppService.forward == this.props.navigation.navigate
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1128,7 +1278,7 @@ AppService.forward == this.props.navigation.navigate
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1139,7 +1289,7 @@ AppService.forward == this.props.navigation.navigate
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
