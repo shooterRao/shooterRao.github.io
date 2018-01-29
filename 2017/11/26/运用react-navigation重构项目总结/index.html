@@ -86,20 +86,20 @@
 
 
 
-<meta name="description" content="采用react-navigation方案重构项目代码总结 前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在">
+<meta name="description" content="前言前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在这里总结一下重构过程吧。 Question：为什么要重">
 <meta name="keywords" content="重构,react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="运用react-navigation重构项目总结">
 <meta property="og:url" content="http://yoursite.com/2017/11/26/运用react-navigation重构项目总结/index.html">
 <meta property="og:site_name" content="Rao Jinwei&#39;s Blog">
-<meta property="og:description" content="采用react-navigation方案重构项目代码总结 前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在">
+<meta property="og:description" content="前言前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在这里总结一下重构过程吧。 Question：为什么要重">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/G1.png">
 <meta property="og:image" content="http://yoursite.com/images/G2.png">
-<meta property="og:updated_time" content="2017-12-27T15:29:10.172Z">
+<meta property="og:updated_time" content="2018-01-29T16:45:38.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="运用react-navigation重构项目总结">
-<meta name="twitter:description" content="采用react-navigation方案重构项目代码总结 前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在">
+<meta name="twitter:description" content="前言前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—react-navigation，来取代之前用的react官方提供的页面导航器Navigator。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在这里总结一下重构过程吧。 Question：为什么要重">
 <meta name="twitter:image" content="http://yoursite.com/images/G1.png">
 
 
@@ -357,8 +357,7 @@
       
 
       
-        <h1 id="采用react-navigation方案重构项目代码总结"><a href="#采用react-navigation方案重构项目代码总结" class="headerlink" title="采用react-navigation方案重构项目代码总结"></a>采用react-navigation方案重构项目代码总结</h1><hr>
-<p>前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—<strong>react-navigation</strong>，来取代之前用的react官方提供的页面导航器<strong>Navigator</strong>。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在这里总结一下重构过程吧。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前段时间，完成了公司项目的底层代码重构，主要内容是采用新的导航器—<strong>react-navigation</strong>，来取代之前用的react官方提供的页面导航器<strong>Navigator</strong>。重构期间，不是很顺利，踩了不少坑，毕竟是底层的代码，所以重构起来非常谨慎，怕影响到上层的业务逻辑。大部分的重构都是由我一个人负责完成，做了不少笔记，刚好我的个人博客撘好了，那就在这里总结一下重构过程吧。</p>
 <h2 id="Question：为什么要重构？"><a href="#Question：为什么要重构？" class="headerlink" title="Question：为什么要重构？"></a>Question：为什么要重构？</h2><p>首先，重构不是老大要求的，而是我提出来的并得到允许才进行的。为什么我要提出要抛弃Navigator？有几点：</p>
 <blockquote>
 <ul>
@@ -548,7 +547,7 @@ AppService.forward == this.props.navigation.navigate
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -559,7 +558,7 @@ AppService.forward == this.props.navigation.navigate
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -570,7 +569,7 @@ AppService.forward == this.props.navigation.navigate
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -605,7 +604,7 @@ AppService.forward == this.props.navigation.navigate
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#采用react-navigation方案重构项目代码总结"><span class="nav-number">1.</span> <span class="nav-text">采用react-navigation方案重构项目代码总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Question：为什么要重构？"><span class="nav-number">1.1.</span> <span class="nav-text">Question：为什么要重构？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构前的准备"><span class="nav-number">1.2.</span> <span class="nav-text">重构前的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始重构"><span class="nav-number">1.3.</span> <span class="nav-text">开始重构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于页面跳转的实现"><span class="nav-number">1.3.1.</span> <span class="nav-text">关于页面跳转的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于页面数据传递的实现"><span class="nav-number">1.3.2.</span> <span class="nav-text">关于页面数据传递的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于数据请求接口name字段的处理"><span class="nav-number">1.3.3.</span> <span class="nav-text">关于数据请求接口name字段的处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Question：为什么要重构？"><span class="nav-number">2.</span> <span class="nav-text">Question：为什么要重构？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重构前的准备"><span class="nav-number">3.</span> <span class="nav-text">重构前的准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始重构"><span class="nav-number">4.</span> <span class="nav-text">开始重构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于页面跳转的实现"><span class="nav-number">4.1.</span> <span class="nav-text">关于页面跳转的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于页面数据传递的实现"><span class="nav-number">4.2.</span> <span class="nav-text">关于页面数据传递的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于数据请求接口name字段的处理"><span class="nav-number">4.3.</span> <span class="nav-text">关于数据请求接口name字段的处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -625,7 +624,7 @@ AppService.forward == this.props.navigation.navigate
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

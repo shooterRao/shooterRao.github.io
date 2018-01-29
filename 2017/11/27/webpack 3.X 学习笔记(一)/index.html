@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="开始学习webpack3.X不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记 —12月3号更新—完善webpack打包配置文件，更全面，更高效">
+<meta name="description" content="前言不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记 —12月3号更新—完善webpack打包配置文件，更全面，更高效">
 <meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack 3.X 学习笔记(一)">
 <meta property="og:url" content="http://yoursite.com/2017/11/27/webpack 3.X 学习笔记(一)/index.html">
 <meta property="og:site_name" content="Rao Jinwei&#39;s Blog">
-<meta property="og:description" content="开始学习webpack3.X不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记 —12月3号更新—完善webpack打包配置文件，更全面，更高效">
+<meta property="og:description" content="前言不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记 —12月3号更新—完善webpack打包配置文件，更全面，更高效">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-10T12:48:43.444Z">
+<meta property="og:updated_time" content="2018-01-29T16:45:15.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack 3.X 学习笔记(一)">
-<meta name="twitter:description" content="开始学习webpack3.X不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记 —12月3号更新—完善webpack打包配置文件，更全面，更高效">
+<meta name="twitter:description" content="前言不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记 —12月3号更新—完善webpack打包配置文件，更全面，更高效">
 
 
 
@@ -354,7 +354,7 @@
       
 
       
-        <h2 id="开始学习webpack3-X"><a href="#开始学习webpack3-X" class="headerlink" title="开始学习webpack3.X"></a>开始学习webpack3.X</h2><p>不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记</p>
 <p><strong>—12月3号更新—</strong><br><br>完善webpack打包配置文件，更全面，更高效</p>
 <a id="more"></a>
 <p><strong>前期准备</strong></p>
@@ -505,7 +505,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -516,7 +516,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -527,7 +527,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -562,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始学习webpack3-X"><span class="nav-number">1.</span> <span class="nav-text">开始学习webpack3.X</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置webpack-config-js"><span class="nav-number">2.</span> <span class="nav-text">配置webpack.config.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增"><span class="nav-number">3.</span> <span class="nav-text">新增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本篇小结"><span class="nav-number">4.</span> <span class="nav-text">本篇小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置webpack-config-js"><span class="nav-number">2.</span> <span class="nav-text">配置webpack.config.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新增"><span class="nav-number">3.</span> <span class="nav-text">新增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本篇小结"><span class="nav-number">4.</span> <span class="nav-text">本篇小结</span></a></li></ol></div>
             
 
           </div>
@@ -582,7 +582,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>

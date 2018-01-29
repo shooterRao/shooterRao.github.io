@@ -86,18 +86,18 @@
 
 
 
-<meta name="description" content="关于函数节流和函数去抖周末在研究关于函数节流和函数去抖这两大性能优化必备的工具，开始觉得它们之间很相似，但仔细去研究，发现它们是有很大的区别的，下面我就来总结下什么是函数节流，什么是函数去抖。">
+<meta name="description" content="前言周末在研究关于函数节流和函数去抖这两大性能优化必备的工具，开始觉得它们之间很相似，但仔细去研究，发现它们是有很大的区别的，下面我就来总结下什么是函数节流，什么是函数去抖。">
 <meta name="keywords" content="js,性能优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于函数节流和函数去抖的实现">
 <meta property="og:url" content="http://yoursite.com/2017/12/10/关于函数节流和函数去抖的实现/index.html">
 <meta property="og:site_name" content="Rao Jinwei&#39;s Blog">
-<meta property="og:description" content="关于函数节流和函数去抖周末在研究关于函数节流和函数去抖这两大性能优化必备的工具，开始觉得它们之间很相似，但仔细去研究，发现它们是有很大的区别的，下面我就来总结下什么是函数节流，什么是函数去抖。">
+<meta property="og:description" content="前言周末在研究关于函数节流和函数去抖这两大性能优化必备的工具，开始觉得它们之间很相似，但仔细去研究，发现它们是有很大的区别的，下面我就来总结下什么是函数节流，什么是函数去抖。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-10T14:13:30.083Z">
+<meta property="og:updated_time" content="2018-01-29T16:45:00.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于函数节流和函数去抖的实现">
-<meta name="twitter:description" content="关于函数节流和函数去抖周末在研究关于函数节流和函数去抖这两大性能优化必备的工具，开始觉得它们之间很相似，但仔细去研究，发现它们是有很大的区别的，下面我就来总结下什么是函数节流，什么是函数去抖。">
+<meta name="twitter:description" content="前言周末在研究关于函数节流和函数去抖这两大性能优化必备的工具，开始觉得它们之间很相似，但仔细去研究，发现它们是有很大的区别的，下面我就来总结下什么是函数节流，什么是函数去抖。">
 
 
 
@@ -354,7 +354,7 @@
       
 
       
-        <h2 id="关于函数节流和函数去抖"><a href="#关于函数节流和函数去抖" class="headerlink" title="关于函数节流和函数去抖"></a>关于函数节流和函数去抖</h2><p>周末在研究关于函数节流和函数去抖这两大性能优化必备的工具，开始觉得它们之间很相似，但仔细去研究，发现它们是有很大的区别的，下面我就来总结下什么是函数节流，什么是函数去抖。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>周末在研究关于函数节流和函数去抖这两大性能优化必备的工具，开始觉得它们之间很相似，但仔细去研究，发现它们是有很大的区别的，下面我就来总结下什么是函数节流，什么是函数去抖。</p>
 <a id="more"></a>
 <h3 id="先谈谈函数去抖"><a href="#先谈谈函数去抖" class="headerlink" title="先谈谈函数去抖"></a>先谈谈函数去抖</h3><h4 id="函数去抖能解决什么？"><a href="#函数去抖能解决什么？" class="headerlink" title="函数去抖能解决什么？"></a>函数去抖能解决什么？</h4><p>如果有一个事件，会连续得触发你指定的回调函数，非常密集地触发，比如<strong>window.onscroll</strong>，<strong>window.onresize</strong>这类事件，如果你的回调函数非常重，有很多逻辑，还有对dom的处理，这是非常影响性能而造成卡顿的，我在做项目时也曾经遇到过。那么，函数去抖就可以登场了，所谓去抖，就是你指定的回调函数，在被监听密集地触发时，它可以不断地去阻止回调函数触发，直到监听事件停止时，也就是在window.onscroll情况下，不再滚动了，然后你指定的回调函数会在定好的延迟时间后触发。</p>
 <p>比如， 让window.onscroll事件来监听触发一个简单的回调：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'hello'</span>);</div><div class="line">&#125;</div><div class="line"><span class="built_in">window</span>.onscroll = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    print();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -520,7 +520,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -531,7 +531,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -542,7 +542,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -577,7 +577,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于函数节流和函数去抖"><span class="nav-number">1.</span> <span class="nav-text">关于函数节流和函数去抖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先谈谈函数去抖"><span class="nav-number">1.1.</span> <span class="nav-text">先谈谈函数去抖</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数去抖能解决什么？"><span class="nav-number">1.1.1.</span> <span class="nav-text">函数去抖能解决什么？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于函数节流"><span class="nav-number">2.</span> <span class="nav-text">关于函数节流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流和函数去抖的运用场景"><span class="nav-number">3.</span> <span class="nav-text">函数节流和函数去抖的运用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先谈谈函数去抖"><span class="nav-number">1.1.</span> <span class="nav-text">先谈谈函数去抖</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#函数去抖能解决什么？"><span class="nav-number">1.1.1.</span> <span class="nav-text">函数去抖能解决什么？</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于函数节流"><span class="nav-number">2.</span> <span class="nav-text">关于函数节流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数节流和函数去抖的运用场景"><span class="nav-number">3.</span> <span class="nav-text">函数节流和函数去抖的运用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -597,7 +597,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
