@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Rao Jinwei&#39;s Blog">
 <meta property="og:description" content="前言发现有一段时间没写博客了，时间过得真的很快，转眼来到了2018，那么，今天就开启2018年的第一篇博客吧！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-01-29T16:41:55.043Z">
+<meta property="og:updated_time" content="2018-02-01T07:29:10.123Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解惑js里的相等操作符&quot;==&quot;和&quot;===&quot;">
 <meta name="twitter:description" content="前言发现有一段时间没写博客了，时间过得真的很快，转眼来到了2018，那么，今天就开启2018年的第一篇博客吧！">
@@ -356,7 +356,7 @@
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>发现有一段时间没写博客了，时间过得真的很快，转眼来到了2018，那么，今天就开启2018年的第一篇博客吧！</p>
 <a id="more"></a>
-<h3 id="先来讨论下js里的”-”"><a href="#先来讨论下js里的”-”" class="headerlink" title="先来讨论下js里的”==”"></a>先来讨论下js里的”==”</h3><p>在js里面，使用==时，不同类型的值也可以被看作是相等的，这可能会让写js的萌新们感到困惑，为什么<code>&#39;1&#39; == 1</code>会被判断为true？还有<code>undefined == null</code>也会被判断为true等等,甚至还有一些更为神奇的“怪现象”（下文会举出demo，让你吃惊下，哈哈）<br><br>经过我查阅资料，用一个表格来概括下</p>
+<h3 id="先来讨论下js里的”-”"><a href="#先来讨论下js里的”-”" class="headerlink" title="先来讨论下js里的”==”"></a>先来讨论下js里的”==”</h3><p>在js里面，使用==时，不同类型的值也可以被看作是相等的，这可能会让写js的萌新们感到困惑，为什么<code>&#39;1&#39; == 1</code>会被判断为true？还有<code>undefined == null</code>也会被判断为true等等,甚至还有一些更为神奇的“怪现象”，其实，这都是”==”操作符会触发js引擎进行<strong>隐式转换</strong>，便产生了各种让萌新们感到神奇的现象（下文会举出demo，让你吃惊下，哈哈）<br><br>经过我查阅资料，用一个表格来概括下</p>
 <table>
 <thead>
 <tr>
@@ -410,7 +410,7 @@
 </table>
 <blockquote>
 <p>如果 x 和 y 是相同类型，javaScript会比较它们的值或对象值。其他没有列在这个表格中的情况都会返回false。</p>
-<p>toNumber 和 toPrimitive 方法是内部进行的， 并根据以下表格进行估值</p>
+<p>toNumber 和 toPrimitive 方法是内部进行的，就是上文提到的<strong>隐式转换</strong></p>
 </blockquote>
 <h4 id="toNumber"><a href="#toNumber" class="headerlink" title="toNumber"></a>toNumber</h4><table>
 <thead>
@@ -447,12 +447,12 @@
 </tbody>
 </table>
 <h4 id="toPrimitive"><a href="#toPrimitive" class="headerlink" title="toPrimitive"></a>toPrimitive</h4><p>关于这个toPrimitive,来一段很有意思的js代码来展开讨论</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">const</span> a = &#123;</div><div class="line">    num : <span class="number">1</span>,</div><div class="line">    valueOf: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> a.num++</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log( a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a==<span class="number">3</span> ) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> a = &#123;</div><div class="line">    num : <span class="number">1</span>,</div><div class="line">    valueOf: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> a.num++</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log( a == <span class="number">1</span> &amp;&amp; a == <span class="number">2</span> &amp;&amp; a==<span class="number">3</span> ) <span class="comment">// true</span></div></pre></td></tr></table></figure>
 <p>居然返回的是true！有没有让你感到惊讶呢？<br>先冷静下，看看为什么会返回true。其实，这都是js引擎在背后搞的鬼。首先，a是一个对象，根据上面的表格，当对象和数字进行<code>==</code>判断时，会进行<code>toPrimitive(a) == 1</code>判断，触发了toPrimitive，这个方法内部是这样的，先调用对象的valueOf方法，看看能不能返回原始值，有原始值就返回，不能的话，就接着调用toString的方法，有值的话就返回，没有的话，返回一个false。</p>
 <p>看完了这段文字，那么上面的问题就很好理解为什么返回true了，首先，toPrimitive(a) 会调用<code>a.valueOf</code>方法，然而对象a自带了valueOf方法(可以理解为把原生的valueOf方法给覆盖了),上面有3个<code>==</code>,就触发了三次<code>toPrimitive(a)</code>,第一次调用valueOf, 返回的值为1，第二次返回的值为2，第三次返回的值为3，那么，最后就会返回true了！</p>
 <blockquote>
 <p>总结：在有关 == 中，数字是大佬，如果 == 两边没有数字，就先找到能调用toNumber()方法的那个(boolean转数字的优先级最大)</p>
-<p>关于为什么 undefined == null 为true，是因为undefined是继承自null，并且undefined是一种数据类型，进行 == 判断时，js引擎会进行隐式转换为true</p>
+<p>关于为什么 undefined == null 为true，是因为undefined是继承自null，并且undefined是一种数据类型，进行 == 判断时，js引擎会进行<strong>隐式转换</strong>为true</p>
 </blockquote>
 <h3 id="关于”-”操作符"><a href="#关于”-”操作符" class="headerlink" title="关于”===”操作符"></a>关于”===”操作符</h3><p>如果比较的两个值类型不同，比较的结果就是false。<br>如果比较的两个值类型相同，结果会根据下表判断</p>
 <table>
@@ -486,7 +486,14 @@
 </tr>
 </tbody>
 </table>
-<h4 id="所以，在以后工作中，还是尽量使用-吧，不然，科科……"><a href="#所以，在以后工作中，还是尽量使用-吧，不然，科科……" class="headerlink" title="所以，在以后工作中，还是尽量使用===吧，不然，科科……"></a>所以，在以后工作中，还是尽量使用===吧，不然，科科……</h4>
+<h3 id="还有一些补充"><a href="#还有一些补充" class="headerlink" title="还有一些补充"></a>还有一些补充</h3><p>在ES5中，<code>===</code>是有点小bug的，比如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+<span class="number">0</span> === <span class="number">-0</span> <span class="comment">// true</span></div><div class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span> <span class="comment">// false</span></div></pre></td></tr></table></figure>
+<p>NaN不全等于NaN这个问题，在ES6中，提出了“同值相等”这一算法来解决这个问题，<code>Object.is()</code>就是实现这算法的API。它用来比较两个值是否严格相等。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Object</span>.is(+<span class="number">0</span>,<span class="number">-0</span>) <span class="comment">// false</span></div><div class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>,<span class="literal">NaN</span>) <span class="comment">// true</span></div></pre></td></tr></table></figure>
+<blockquote>
+<p>所以，在以后部署了ES6的环境中，尽量使用<code>Object.is</code>来判断，ES5中就使用”===”，少用”==”。</p>
+</blockquote>
+
       
     </div>
     
@@ -600,7 +607,7 @@
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">Rao Jinwei</p>
-              <p class="site-description motion-element" itemprop="description">追寻生活的影子，品尝思考的味道</p>
+              <p class="site-description motion-element" itemprop="description">追寻生活的影子</p>
           </div>
 
           <nav class="site-state motion-element">
@@ -632,7 +639,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -667,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先来讨论下js里的”-”"><span class="nav-number">1.1.</span> <span class="nav-text">先来讨论下js里的”==”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#toNumber"><span class="nav-number">1.1.1.</span> <span class="nav-text">toNumber</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toPrimitive"><span class="nav-number">1.1.2.</span> <span class="nav-text">toPrimitive</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于”-”操作符"><span class="nav-number">1.2.</span> <span class="nav-text">关于”===”操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#所以，在以后工作中，还是尽量使用-吧，不然，科科……"><span class="nav-number">1.2.1.</span> <span class="nav-text">所以，在以后工作中，还是尽量使用===吧，不然，科科……</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先来讨论下js里的”-”"><span class="nav-number">1.1.</span> <span class="nav-text">先来讨论下js里的”==”</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#toNumber"><span class="nav-number">1.1.1.</span> <span class="nav-text">toNumber</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toPrimitive"><span class="nav-number">1.1.2.</span> <span class="nav-text">toPrimitive</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于”-”操作符"><span class="nav-number">1.2.</span> <span class="nav-text">关于”===”操作符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#还有一些补充"><span class="nav-number">1.3.</span> <span class="nav-text">还有一些补充</span></a></li></ol></li></ol></div>
             
 
           </div>
