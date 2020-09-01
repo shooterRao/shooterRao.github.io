@@ -7,7 +7,7 @@ set -e
 yarn build
 
 # 进入生成的文件夹
-cd .vuepress/dist
+cd dist
 
 echo "Generating a CNAME file..."
 echo "shooterblog.site" > CNAME

@@ -3,7 +3,7 @@ const themeConfig = require('./theme');
 module.exports = {
   title: `RJW's Blog`,
   description: '你若盛开，蝴蝶自来',
-  dest: 'public',
+  dest: 'dist',
   locales: { '/': { lang: 'zh' } },
   head: [
     [
