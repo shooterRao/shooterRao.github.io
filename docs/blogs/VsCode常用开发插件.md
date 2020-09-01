@@ -2,7 +2,7 @@
 title: VsCode常用开发插件
 date: 2017-11-09 22:01:44
 categories: [Tool]
-tags: [Tool,IDE]
+tags: [Tool]
 ---
 
 ## 前言
