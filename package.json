@@ -1,0 +1,22 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev ./docs",
+    "build": "vuepress build ./docs",
+    "push": "bash push.sh"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "bash deploy.sh"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "vuepress": "^1.5.4"
+  },
+  "dependencies": {
+    "vuepress-theme-reco": "^1.5.5"
+  }
+}
