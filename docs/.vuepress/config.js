@@ -1,7 +1,7 @@
 const themeConfig = require('./theme');
 
 module.exports = {
-  title: `RJW's Blog`,
+  title: `Raojw's Blog`,
   description: '你若盛开，蝴蝶自来',
   dest: 'dist',
   locales: { '/': { lang: 'zh' } },
@@ -20,7 +20,6 @@ module.exports = {
         content: 'width=device-width,initial-scale=1,user-scalable=no',
       },
     ],
-    ['link', { rel: 'icon', href: '/logo.png' }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],

@@ -11,6 +11,10 @@ module.exports = {
       icon: 'reco-date',
     },
     {
+      text: '📒个人笔记本',
+      link: 'http://shooterblog.site/Notebook/',
+    },
+    {
       text: 'GitHub',
       link: 'https://github.com/shooterRao',
       icon: 'reco-github',
