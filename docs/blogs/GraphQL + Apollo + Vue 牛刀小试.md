@@ -1,7 +1,7 @@
 ---
 title: GraphQL + Apollo + Vue 牛刀小试
-date: 2019-05-25 09:41:52
-tags: [GraphQL, Apollo]
+date: 2019-05-25
+tags: [GraphQL, apollo]
 categories: [GraphQL]
 ---
 

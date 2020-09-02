@@ -1,6 +1,6 @@
 ---
 title: 聊聊JS里的this
-date: 2018-02-28 11:23:59
+date: 2018-02-28
 tags: [js,this] 
 categories: [js基础]
 ---

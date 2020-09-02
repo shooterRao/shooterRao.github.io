@@ -1,6 +1,6 @@
 ---
 title: Vuecli2引入Arcgis-js-api方案总结(非esri-loader方向)
-date: 2018-09-23 16:25:14
+date: 2018-09-23
 tags: [arcgis, webpack, vue]
 categories: [vue]
 ---

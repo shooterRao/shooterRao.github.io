@@ -1,6 +1,6 @@
 ---
 title: Vue 实践小结(长期更新)
-date: 2018-11-04 09:42:07
+date: 2018-11-04
 tags: [vue]
 categories: [vue]
 ---

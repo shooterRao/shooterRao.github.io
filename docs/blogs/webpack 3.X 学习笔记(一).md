@@ -1,6 +1,6 @@
 ---
 title: webpack 3.X 学习笔记(一)
-date: 2017-11-27 23:09:36
+date: 2017-11-27
 tags: [webpack]
 categories: [webpack]
 ---

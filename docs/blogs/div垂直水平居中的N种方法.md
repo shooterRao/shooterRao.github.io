@@ -1,7 +1,7 @@
 ---
 title: div垂直水平居中的N种方法
-date: 2017-11-20 21:53:17
-tags: css 布局
+date: 2017-11-20
+tags: [css]
 ---
 
 ## 前言
@@ -124,7 +124,7 @@ css transform，不方便的是根据浏览器不同需要写些前缀
 .content {
     height: 600px;
     width: 600px;
-    display: inline-block; <!-- 开启BFC -->
+    display: inline-block; /* 开启BFC */
 }
 .content-div {
     margin: 250px;

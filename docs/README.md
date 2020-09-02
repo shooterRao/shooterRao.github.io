@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: Raojw's Blog
+heroText: RJW's Blog
 tagline: 你若盛开，蝴蝶自来
 # heroImage: /hero.png
 # heroImageStyle: {

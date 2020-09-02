@@ -1,6 +1,6 @@
 ---
 title: 运用react-navigation重构项目总结
-date: 2017-11-26 15:49:24
+date: 2017-11-26
 tags: [重构,react] 
 categories: [重构]
 ---

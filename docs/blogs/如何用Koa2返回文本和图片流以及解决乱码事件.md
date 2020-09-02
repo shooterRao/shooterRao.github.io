@@ -1,6 +1,6 @@
 ---
 title: 如何用Koa2返回文本和图片流以及解决乱码事件
-date: 2018-04-15 10:36:05
+date: 2018-04-15
 tags: [js, node, koa2]
 categories: [koa2]
 ---

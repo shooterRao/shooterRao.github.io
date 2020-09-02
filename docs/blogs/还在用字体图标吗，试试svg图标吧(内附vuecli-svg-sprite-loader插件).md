@@ -1,8 +1,8 @@
 ---
 title: 还在用字体图标吗，试试svg图标吧(内附vuecli-svg-sprite-loader插件)
-date: 2020-05-18 22:00:43
-tags: [vue]
-categories: [工具]
+date: 2020-05-18
+tags: [vue,工具]
+categories: [vue]
 ---
 
 ## 关于字体图标

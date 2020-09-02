@@ -1,7 +1,7 @@
 const themeConfig = require('./theme');
 
 module.exports = {
-  title: `Raojw's Blog`,
+  title: `RJW's Blog`,
   description: '你若盛开，蝴蝶自来',
   dest: 'dist',
   locales: { '/': { lang: 'zh' } },

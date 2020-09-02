@@ -1,6 +1,6 @@
 ---
 title: 用React-Native+Mobx做一个迷你水果商城APP
-date: 2017-12-27 22:57:50
+date: 2017-12-27
 tags: [react-native,mobx]
 categories: [react-native]
 ---

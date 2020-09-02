@@ -11,25 +11,15 @@ module.exports = {
       icon: 'reco-date',
     },
     {
-      text: '📒个人笔记本',
+      text: '📝 个人笔记本',
       link: 'http://shooterblog.site/Notebook/',
+      // icon: 'reco-suggestion'
     },
     {
       text: 'GitHub',
       link: 'https://github.com/shooterRao',
       icon: 'reco-github',
     },
-    // {
-    //   text: 'Contact',
-    //   icon: 'reco-message',
-    //   items: [
-    //     {
-    //       text: 'GitHub',
-    //       link: 'https://github.com/recoluan',
-    //       icon: 'reco-github',
-    //     },
-    //   ],
-    // },
   ],
   type: 'blog',
   blogConfig: {
