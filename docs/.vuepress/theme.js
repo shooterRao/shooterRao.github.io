@@ -34,6 +34,7 @@ module.exports = {
   },
   friendLink: [],
   // logo: '/logo.png',
+  mode: 'light',
   search: true,
   searchMaxSuggestions: 10,
   lastUpdated: 'Last Updated',
