@@ -388,7 +388,7 @@ export function defineReactive (
 
 `Dep`是什么？首先，再来看这个类的源码头部注释，大概意思是，`dep`是可观察的，并且有多个订阅它的指令。这里说的指令，其实是指`Watcher`。在观察者模式中，`Dep`无疑就是**目标对象**。每个属性对象都有其各自的`dep`实例，这些实例都是可以被观察订阅的，那么既然可以被观察，它**就要知道它被有多少个watcher订阅了**，所以这里必须要有收集和存储这些观察者的地方，也就是所谓的**观察者池**。注意，这里说的观察，跟上文说的`Observer`观察不太一样，`Watcher`是观察`Dep`。上文有说到`setter`会执行`dep.notify()`方法，所以`Dep`除了有收集观察者，还有向这些观察者发送消息的作用。
 
-啰啰嗦嗦说了那么多，这货作用很简单，知道就是**添加/删除 watcher**，**让watcher收集自身和向watcher发布消息**。
+啰啰嗦嗦说了那么多，发现还漏了很重要一点，`Dep`其实是`dependence`的简写，指可以被收集的依赖，被谁收集？当然是`Watcher`啦，收集依赖和订阅目标对象都是同一码事！待会在讲`Watcher` 的时候，你就会在源码中看到`collect`、`dependencies`这些关键字。
 
 来看下源码部分：
 
@@ -471,7 +471,7 @@ function popTarget () {
 }
 ```
 
-我们可以看到，`Dep`其实扮演着对`Watcher`管理的一种角色。也就是**观察者模式**中**一对多**的依赖关系。所以说`Dep`是响应式系统中不可或缺的一环。同样的，`Watcher`也是非常重要了，脱离`Watcher`的`Dep`将没有任何意义，下面来看看`Watcher`的源码实现。
+ 在源码中，我们看到`Deo`可以**添加/删除 watcher**，**让watcher收集自身和向watcher发布消息**。`Dep`其实是扮演着对`Watcher`管理的一种角色。再回顾上文介绍观察者模式的一句话，**一个目标对象管理所有相依于它的观察者对象**，这样是不是都联系起来啦？想是老大管理着一群小弟的感觉，小弟们都在“注视”着老大，等待老大发布各种任务，然后干活。老大需要小弟帮忙干活，小弟需要老大来指挥，所以在这个模式下，两者都有依赖关系，任何一方脱离了组织都没有意义了，下面该来看看`Watcher`的原理了。
 
 ### Watcher
 
@@ -772,7 +772,7 @@ export default class Watcher {
    * Evaluate the value of the watcher.
    * This only gets called for lazy watchers.
    */
-  // 计算属性，lazy watcher 就是 computed watcher
+  // lazy watcher 就是 computed watcher，This only gets called for lazy watchers.
   evaluate () {
     this.value = this.get()
     // 计算过了，表示缓存干净了
@@ -782,7 +782,7 @@ export default class Watcher {
   /**
    * Depend on all deps collected by this watcher.
    */
-  // 让 deps 进行收集 watcher
+  // 让这些 deps 被这个 watcher 收集进去
   depend () {
     let i = this.deps.length
     while (i--) {
