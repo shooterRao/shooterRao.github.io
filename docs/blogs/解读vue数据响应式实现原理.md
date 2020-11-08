@@ -1,5 +1,5 @@
 ---
-title: 【Vue源码学习系列】解读数据响应式实现原理
+title: 解读vue数据响应式实现原理
 date: 2019-07-09
 tags: [vue,源码学习]
 categories: [vue源码]

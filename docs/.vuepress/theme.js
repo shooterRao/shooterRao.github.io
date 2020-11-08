@@ -42,4 +42,5 @@ module.exports = {
   authorAvatar:
     'https://avatars1.githubusercontent.com/u/23609695?s=400&u=d2db8f6efdee5add420addf7f89b916f7ef47ca7&v=4',
   startYear: '2017',
+  subSidebar: 'auto'
 }

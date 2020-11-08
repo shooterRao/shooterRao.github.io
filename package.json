@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "vuepress dev ./docs",
+    "serve": "vuepress dev ./docs",
     "build": "vuepress build ./docs",
     "push": "bash push.sh"
   },
@@ -19,6 +19,6 @@
     "vuepress-plugin-nuggets-style-copy": "^1.0.3"
   },
   "dependencies": {
-    "vuepress-theme-reco": "^1.5.5"
+    "vuepress-theme-reco": "^1.5.7"
   }
 }
