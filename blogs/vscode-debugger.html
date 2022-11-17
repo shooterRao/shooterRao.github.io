@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>手把手教你用Vscode Debugger调试代码 | RJW&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/sl.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="你若盛开，蝴蝶自来">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.1c793696.css" as="style"><link rel="preload" href="/assets/js/app.69ab4a99.js" as="script"><link rel="preload" href="/assets/js/3.3b39e7a0.js" as="script"><link rel="preload" href="/assets/js/1.88acf310.js" as="script"><link rel="preload" href="/assets/js/8.c86ada2b.js" as="script"><link rel="preload" href="/assets/js/12.9e8433f0.js" as="script"><link rel="prefetch" href="/assets/js/10.d62c995d.js"><link rel="prefetch" href="/assets/js/11.1384acab.js"><link rel="prefetch" href="/assets/js/13.c3dd678c.js"><link rel="prefetch" href="/assets/js/14.77235c73.js"><link rel="prefetch" href="/assets/js/15.9538787d.js"><link rel="prefetch" href="/assets/js/16.8917779f.js"><link rel="prefetch" href="/assets/js/17.4e25faa6.js"><link rel="prefetch" href="/assets/js/18.8d0e9663.js"><link rel="prefetch" href="/assets/js/19.0ef6d18e.js"><link rel="prefetch" href="/assets/js/20.f9f00376.js"><link rel="prefetch" href="/assets/js/21.0174c86d.js"><link rel="prefetch" href="/assets/js/22.bf304af6.js"><link rel="prefetch" href="/assets/js/23.67fbfbae.js"><link rel="prefetch" href="/assets/js/24.13491854.js"><link rel="prefetch" href="/assets/js/25.b91a31fa.js"><link rel="prefetch" href="/assets/js/26.d7c907d5.js"><link rel="prefetch" href="/assets/js/27.c4fd3e8f.js"><link rel="prefetch" href="/assets/js/28.3c811814.js"><link rel="prefetch" href="/assets/js/29.b0ecd0bd.js"><link rel="prefetch" href="/assets/js/30.4de5466b.js"><link rel="prefetch" href="/assets/js/31.8677ab92.js"><link rel="prefetch" href="/assets/js/4.078135db.js"><link rel="prefetch" href="/assets/js/5.8d61b07d.js"><link rel="prefetch" href="/assets/js/6.f943569e.js"><link rel="prefetch" href="/assets/js/7.85eba70b.js"><link rel="prefetch" href="/assets/js/9.97d634f1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1c793696.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>RJW's Blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>RJW</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">RJW's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/koa2/" class="nav-link"><i class="iconfont undefined"></i>
+  koa2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/GraphQL/" class="nav-link"><i class="iconfont undefined"></i>
+  GraphQL
+</a></li><li class="dropdown-item"><!----> <a href="/categories/脚手架/" class="nav-link"><i class="iconfont undefined"></i>
+  脚手架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js基础/" class="nav-link"><i class="iconfont undefined"></i>
+  js基础
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端工具/" class="nav-link"><i class="iconfont undefined"></i>
+  前端工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="iconfont undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react-native/" class="nav-link"><i class="iconfont undefined"></i>
+  react-native
+</a></li><li class="dropdown-item"><!----> <a href="/categories/性能优化/" class="nav-link"><i class="iconfont undefined"></i>
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/重构/" class="nav-link"><i class="iconfont undefined"></i>
+  重构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="iconfont undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue源码/" class="nav-link"><i class="iconfont undefined"></i>
+  vue源码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  tool
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://shooterblog.site/Notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  📝 个人笔记本
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/shooterRao" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="https://avatars1.githubusercontent.com/u/23609695?s=400&amp;u=d2db8f6efdee5add420addf7f89b916f7ef47ca7&amp;v=4" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    RJW
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>19</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>24</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/koa2/" class="nav-link"><i class="iconfont undefined"></i>
+  koa2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/GraphQL/" class="nav-link"><i class="iconfont undefined"></i>
+  GraphQL
+</a></li><li class="dropdown-item"><!----> <a href="/categories/脚手架/" class="nav-link"><i class="iconfont undefined"></i>
+  脚手架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js基础/" class="nav-link"><i class="iconfont undefined"></i>
+  js基础
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端工具/" class="nav-link"><i class="iconfont undefined"></i>
+  前端工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="iconfont undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react-native/" class="nav-link"><i class="iconfont undefined"></i>
+  react-native
+</a></li><li class="dropdown-item"><!----> <a href="/categories/性能优化/" class="nav-link"><i class="iconfont undefined"></i>
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/重构/" class="nav-link"><i class="iconfont undefined"></i>
+  重构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="iconfont undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue源码/" class="nav-link"><i class="iconfont undefined"></i>
+  vue源码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  tool
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://shooterblog.site/Notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  📝 个人笔记本
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/shooterRao" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>手把手教你用Vscode Debugger调试代码</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>RJW</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">手把手教你用Vscode Debugger调试代码</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>RJW</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2018-05-19</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>js</span><span class="tag-item" data-v-3b7f5bdf>node</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>一直觉得Vscode是前端开发最友好的IDE，里面内置的功能非常好用，无论是其拥有丰富的插件拓展，还是git的集成，都是提高效率的好帮手。Vscode还隐藏了一个据说非常强大的debugger模块，今天经过我一番尝试，发现十分有用，接下来，我就总结下如何使用Debugger模块进行代码调试。</p> <h2 id="你想在哪调试-😏"><a href="#你想在哪调试-😏" class="header-anchor">#</a> 你想在哪调试？😏</h2> <p>首先，这个标题起得确实有点那个，在哪调试？当然是在Vscode里面啊😓不过，这个“哪”，其实问的是环境。什么环境？就目前大前端来说，环境不过于分为浏览器(Chrome)和Node了。Chrome和Node虽然都能跑js，但是具体的环境是视它们版本而定的，所以，不能有我在Chrome下跑的js正常，在Node就一定正常这种说法，具体要看它们用的V8是不是同一版本的。</p> <p>好了，不唠叨了，vscode的debugger环境是分为Chrome和Node的。接下来，我先讲讲如何在Chrome环境下，使用vscode debugger进行代码调试。</p> <h3 id="debugger-for-chrome"><a href="#debugger-for-chrome" class="header-anchor">#</a> Debugger For Chrome</h3> <p>Vscode里面是没有内置调试Chrome的模块的，需要单独安装。</p> <p>第一步，先安装插件<code>Debugger For Chrome</code></p> <p><img src="/assets/img/1.8c27b711.png" alt="安装插件"></p> <p>第二步，任意目录下创建一个名<code>debug</code>文件夹，接着在里面分别创建<code>index.html</code>，<code>index.js</code>文件.</p> <p>第三步，配置这个插件，让它跑起来：</p> <p>首先，先打开vscode调试区域，然后点设置</p> <p><img src="/assets/img/2.f0f62aaf.png" alt="步骤"></p> <p>然后，选Chrome</p> <p><img src="/assets/img/3.31e7837d.png" alt="步骤"></p> <p>进入了<code>launch.json</code>文件</p> <p>把配置改成</p> <div class="language-JavaScript line-numbers-mode"><pre class="language-javascript"><code>  <span class="token string">&quot;version&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0.2.0&quot;</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;configurations&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;chrome&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;request&quot;</span><span class="token operator">:</span> <span class="token string">&quot;launch&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Launch index.html&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;sourceMaps&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;file&quot;</span><span class="token operator">:</span> <span class="token string">&quot;${workspaceRoot}/index.html&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>最后，切成<code>Launch index.html</code>，再点绿色icon或者在<code>index.html</code>目录下直接按<code>F5</code>就跑起来啦</p> <p><img src="/assets/img/4.c7670098.png" alt="步骤"></p> <p>快看看你的chrome是不是自动启动了！</p> <p>如果启动了，ok，接着在<code>index.html</code>下引入<code>index.js</code>，在<code>index.js</code>里面随便写点js，然后重新启动</p> <p><img src="/assets/img/5.d52a80ec.png" alt="步骤"></p> <p>看，<code>console.log()</code>不是在vscode里面显示出来啦</p> <p><img src="/assets/img/6.8dbeffaa.png" alt="步骤"></p> <h4 id="断点调试"><a href="#断点调试" class="header-anchor">#</a> 断点调试</h4> <p>我们试试在vscode里面加断点，单步调试</p> <p><img src="/assets/img/7.a734e2af.png" alt="步骤"></p> <p>OK，完全没问题，感觉是不是很方便，调试js只需要在IDE中完成，<strong>不用再切换到浏览器中了！</strong></p> <h4 id="有点高级的用法-加attach"><a href="#有点高级的用法-加attach" class="header-anchor">#</a> 有点高级的用法(加Attach)</h4> <p>抛出一个问题，加Attach有什么用？</p> <p>我在平常开发中，是结合<code>live-server</code>(vscode插件)进行开发的，<code>live-server</code>非常强大好用，它会监听你文件改动进行自动刷新浏览器，无须手动去刷新。这里<code>Attach</code>的作用就是去附加在我用<code>live-server</code>启动的开发的服务器上，去监听我那里的<code>chrome debugger</code>，通俗来讲，就是让vscode的调试控制台上可以完整得显示出<code>debugger</code>信息。</p> <p>举个栗子吧，我用<code>live-server</code>开了个<code>http://localhost:5500</code>的服务，里面有很多<code>console.log</code>和<code>debugger</code>信息，如果我不加<code>Attach</code>，只能在chrome的<code>F12</code>调出devtools看信息和动态打断点调试。有了<code>Attach</code>，调试js时，我就不用老是盯着浏览器的devtools去看了，也不用去找文件打断点了，直接在vscode里面完成所有调试，真爽😝</p> <p>如何配置使用？</p> <p>首先用<code>live-server</code>打开<code>index.html</code>，你会发现浏览器自动跳转到<code>http://localhost:5500</code>上了。好，接着到<code>launch.json</code>进行配置</p> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;chrome&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;request&quot;</span><span class="token operator">:</span> <span class="token string">&quot;attach&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Attach to Chrome&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;port&quot;</span><span class="token operator">:</span> <span class="token number">9222</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;webRoot&quot;</span><span class="token operator">:</span> <span class="token string">&quot;${workspaceFolder}&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;chrome&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;request&quot;</span><span class="token operator">:</span> <span class="token string">&quot;launch&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;启动 Chrome 并打开 localhost&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://localhost:5500&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;webRoot&quot;</span><span class="token operator">:</span> <span class="token string">&quot;${workspaceFolder}&quot;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>配到这里，如果你直接试着直接去开启，发现是不行的，我刚开始尝试时掉进这个坑里，后来，在官方配置文档里找到了答案，需要对Chrome浏览器启动项进行配置</p> <p><img src="/assets/img/8.1514c40c.png" alt="步骤"></p> <p>关掉你现在的chrome，在去vscode调试面板上，换成<code>Attach to Chrome</code>，在启动，就可以了~😆</p> <p>那么，让所有关于js调试都在Vscode里面搞定吧！</p> <h3 id="调试node-js"><a href="#调试node-js" class="header-anchor">#</a> 调试Node.js</h3> <p>Vscode内置Node的调试环境，就不需要安装插件了，先创个名为<code>node.js</code>的文件，然后在<code>launch.json</code>里添加配置</p> <p><img src="/assets/img/9.6f26cf58.png" alt="步骤"></p> <div class="language-JavaScript line-numbers-mode"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+    <span class="token string">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;node&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;request&quot;</span><span class="token operator">:</span> <span class="token string">&quot;launch&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Launch Node&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;program&quot;</span><span class="token operator">:</span> <span class="token string">&quot;${workspaceFolder}/node.js&quot;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p>配置完成后，在调试面板上，启动选项切换成<code>Launch Node</code>，然后启动就可以了，断点调试什么都是没问题的。</p> <p>Tips：</p> <blockquote><p>我觉得如果是学习JavaScript的话，写demo配合Vscode里的Node的调试环境是不错的选择。</p></blockquote> <p>用Vscode的Debugger对用框架(react,vue,ng)编写的网页调试也是非常方便的，方法也都差不多，这里不一一举例了，有兴趣的童鞋可以自行尝试😁</p> <h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>上面就是总结了，这里没啥写了，附上参考文档的链接吧</p> <p><a href="https://github.com/Microsoft/vscode-chrome-debug" target="_blank" rel="noopener noreferrer">Debugger For Chrome<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p><a href="https://www.bilibili.com/video/av14868402/" target="_blank" rel="noopener noreferrer">参考视频<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/11/17 10:04:04</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----></div></div>
+    <script src="/assets/js/app.69ab4a99.js" defer></script><script src="/assets/js/3.3b39e7a0.js" defer></script><script src="/assets/js/1.88acf310.js" defer></script><script src="/assets/js/8.c86ada2b.js" defer></script><script src="/assets/js/12.9e8433f0.js" defer></script>
+  </body>
+</html>

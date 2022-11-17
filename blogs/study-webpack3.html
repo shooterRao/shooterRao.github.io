@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>webpack 3.X 学习笔记(一) | RJW&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    <link rel="icon" href="/sl.ico">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#3eaf7c">
+    <meta name="description" content="你若盛开，蝴蝶自来">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/icons/msapplication-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    <link rel="preload" href="/assets/css/0.styles.1c793696.css" as="style"><link rel="preload" href="/assets/js/app.69ab4a99.js" as="script"><link rel="preload" href="/assets/js/3.3b39e7a0.js" as="script"><link rel="preload" href="/assets/js/1.88acf310.js" as="script"><link rel="preload" href="/assets/js/25.b91a31fa.js" as="script"><link rel="preload" href="/assets/js/12.9e8433f0.js" as="script"><link rel="prefetch" href="/assets/js/10.d62c995d.js"><link rel="prefetch" href="/assets/js/11.1384acab.js"><link rel="prefetch" href="/assets/js/13.c3dd678c.js"><link rel="prefetch" href="/assets/js/14.77235c73.js"><link rel="prefetch" href="/assets/js/15.9538787d.js"><link rel="prefetch" href="/assets/js/16.8917779f.js"><link rel="prefetch" href="/assets/js/17.4e25faa6.js"><link rel="prefetch" href="/assets/js/18.8d0e9663.js"><link rel="prefetch" href="/assets/js/19.0ef6d18e.js"><link rel="prefetch" href="/assets/js/20.f9f00376.js"><link rel="prefetch" href="/assets/js/21.0174c86d.js"><link rel="prefetch" href="/assets/js/22.bf304af6.js"><link rel="prefetch" href="/assets/js/23.67fbfbae.js"><link rel="prefetch" href="/assets/js/24.13491854.js"><link rel="prefetch" href="/assets/js/26.d7c907d5.js"><link rel="prefetch" href="/assets/js/27.c4fd3e8f.js"><link rel="prefetch" href="/assets/js/28.3c811814.js"><link rel="prefetch" href="/assets/js/29.b0ecd0bd.js"><link rel="prefetch" href="/assets/js/30.4de5466b.js"><link rel="prefetch" href="/assets/js/31.8677ab92.js"><link rel="prefetch" href="/assets/js/4.078135db.js"><link rel="prefetch" href="/assets/js/5.8d61b07d.js"><link rel="prefetch" href="/assets/js/6.f943569e.js"><link rel="prefetch" href="/assets/js/7.85eba70b.js"><link rel="prefetch" href="/assets/js/8.c86ada2b.js"><link rel="prefetch" href="/assets/js/9.97d634f1.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1c793696.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar" data-v-2d5f533b><div data-v-2d5f533b><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-2d5f533b data-v-2d5f533b><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-64685f0e data-v-2d5f533b data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>RJW's Blog</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>RJW</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2022
+        </a></span></div></div> <div class="hide" data-v-2d5f533b><header class="navbar" data-v-2d5f533b><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">RJW's Blog</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/koa2/" class="nav-link"><i class="iconfont undefined"></i>
+  koa2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/GraphQL/" class="nav-link"><i class="iconfont undefined"></i>
+  GraphQL
+</a></li><li class="dropdown-item"><!----> <a href="/categories/脚手架/" class="nav-link"><i class="iconfont undefined"></i>
+  脚手架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js基础/" class="nav-link"><i class="iconfont undefined"></i>
+  js基础
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端工具/" class="nav-link"><i class="iconfont undefined"></i>
+  前端工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="iconfont undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react-native/" class="nav-link"><i class="iconfont undefined"></i>
+  react-native
+</a></li><li class="dropdown-item"><!----> <a href="/categories/性能优化/" class="nav-link"><i class="iconfont undefined"></i>
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/重构/" class="nav-link"><i class="iconfont undefined"></i>
+  重构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="iconfont undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue源码/" class="nav-link"><i class="iconfont undefined"></i>
+  vue源码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  tool
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://shooterblog.site/Notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  📝 个人笔记本
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/shooterRao" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-2d5f533b></div> <aside class="sidebar" data-v-2d5f533b><div class="personal-info-wrapper" data-v-ca798c94 data-v-2d5f533b><img src="https://avatars1.githubusercontent.com/u/23609695?s=400&amp;u=d2db8f6efdee5add420addf7f89b916f7ef47ca7&amp;v=4" alt="author-avatar" class="personal-img" data-v-ca798c94> <h3 class="name" data-v-ca798c94>
+    RJW
+  </h3> <div class="num" data-v-ca798c94><div data-v-ca798c94><h3 data-v-ca798c94>19</h3> <h6 data-v-ca798c94>Article</h6></div> <div data-v-ca798c94><h3 data-v-ca798c94>24</h3> <h6 data-v-ca798c94>Tag</h6></div></div> <hr data-v-ca798c94></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link"><i class="iconfont reco-home"></i>
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="iconfont reco-category"></i>
+      Category
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/koa2/" class="nav-link"><i class="iconfont undefined"></i>
+  koa2
+</a></li><li class="dropdown-item"><!----> <a href="/categories/GraphQL/" class="nav-link"><i class="iconfont undefined"></i>
+  GraphQL
+</a></li><li class="dropdown-item"><!----> <a href="/categories/脚手架/" class="nav-link"><i class="iconfont undefined"></i>
+  脚手架
+</a></li><li class="dropdown-item"><!----> <a href="/categories/js基础/" class="nav-link"><i class="iconfont undefined"></i>
+  js基础
+</a></li><li class="dropdown-item"><!----> <a href="/categories/前端工具/" class="nav-link"><i class="iconfont undefined"></i>
+  前端工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/css/" class="nav-link"><i class="iconfont undefined"></i>
+  css
+</a></li><li class="dropdown-item"><!----> <a href="/categories/react-native/" class="nav-link"><i class="iconfont undefined"></i>
+  react-native
+</a></li><li class="dropdown-item"><!----> <a href="/categories/性能优化/" class="nav-link"><i class="iconfont undefined"></i>
+  性能优化
+</a></li><li class="dropdown-item"><!----> <a href="/categories/重构/" class="nav-link"><i class="iconfont undefined"></i>
+  重构
+</a></li><li class="dropdown-item"><!----> <a href="/categories/webpack/" class="nav-link"><i class="iconfont undefined"></i>
+  webpack
+</a></li><li class="dropdown-item"><!----> <a href="/categories/工具/" class="nav-link"><i class="iconfont undefined"></i>
+  工具
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue源码/" class="nav-link"><i class="iconfont undefined"></i>
+  vue源码
+</a></li><li class="dropdown-item"><!----> <a href="/categories/tool/" class="nav-link"><i class="iconfont undefined"></i>
+  tool
+</a></li><li class="dropdown-item"><!----> <a href="/categories/vue/" class="nav-link"><i class="iconfont undefined"></i>
+  vue
+</a></li></ul></div></div><div class="nav-item"><a href="/tag/" class="nav-link"><i class="iconfont reco-tag"></i>
+  Tag
+</a></div><div class="nav-item"><a href="/timeline/" class="nav-link"><i class="iconfont reco-date"></i>
+  TimeLine
+</a></div><div class="nav-item"><a href="http://shooterblog.site/Notebook/" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont undefined"></i>
+  📝 个人笔记本
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div><div class="nav-item"><a href="https://github.com/shooterRao" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-github"></i>
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-64685f0e data-v-2d5f533b><h3 class="title" style="display:none;" data-v-64685f0e data-v-64685f0e>webpack 3.X 学习笔记(一)</h3> <!----> <label id="box" class="inputBox" style="display:none;" data-v-64685f0e data-v-64685f0e><input type="password" value="" data-v-64685f0e> <span data-v-64685f0e>Konck! Knock!</span> <button data-v-64685f0e>OK</button></label> <div class="footer" style="display:none;" data-v-64685f0e data-v-64685f0e><span data-v-64685f0e><i class="iconfont reco-theme" data-v-64685f0e></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-64685f0e>vuePress-theme-reco</a></span> <span data-v-64685f0e><i class="iconfont reco-copyright" data-v-64685f0e></i> <a data-v-64685f0e><span data-v-64685f0e>RJW</span>
+            
+          <span data-v-64685f0e>2017 - </span>
+          2022
+        </a></span></div></div> <div data-v-2d5f533b><main class="page"><div class="page-title" style="display:none;"><h1 class="title">webpack 3.X 学习笔记(一)</h1> <div data-v-3b7f5bdf><i class="iconfont reco-account" data-v-3b7f5bdf><span data-v-3b7f5bdf>RJW</span></i> <i class="iconfont reco-date" data-v-3b7f5bdf><span data-v-3b7f5bdf>2017-11-27</span></i> <!----> <i class="iconfont reco-tag tags" data-v-3b7f5bdf><span class="tag-item" data-v-3b7f5bdf>webpack</span></i></div></div> <div class="theme-reco-content content__default" style="display:none;"><h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>不知不觉，webpack现在已经更新到3.8了，新版本增加了几种新功能，打包速度据说也大大提升，因为之前使用和配置的webpack都是2.0以下的，所以想紧跟大部队，继续学习新版本的webpack，顺便做些笔记</p> <p><strong>---12月3号更新---</strong><br>
+完善webpack打包配置文件，更全面，更高效</p> <p><strong>前期准备</strong></p> <blockquote><ul><li>1.npm install webpack -g (全局安装)</li> <li>2.创一个文件夹, npm init 然后接着npm install webpack --save-dev (局部安装)</li> <li>3.分别创建dist, src两个文件夹</li> <li>4.在根目录下创建webpack.config.js</li> <li>5.插件按需安装</li></ul></blockquote> <h2 id="配置webpack-config-js"><a href="#配置webpack-config-js" class="header-anchor">#</a> 配置webpack.config.js</h2> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> glob <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'glob'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> UglifyJs <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'uglifyjs-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 代码压缩插件</span>
+<span class="token keyword">const</span> htmlPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'html-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// html引入文件插件</span>
+<span class="token keyword">const</span> extractTextPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'extract-text-webpack-plugin'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 把css从js文件中分离出来插件 </span>
+<span class="token keyword">const</span> PurifyCSSPlugin <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'purifycss-webpack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 消除没用到的css</span>
+
+<span class="token keyword">const</span> website <span class="token operator">=</span> <span class="token punctuation">{</span>
+    publicPath<span class="token operator">:</span> <span class="token string">&quot;http://localhost:8081/&quot;</span> 
+<span class="token punctuation">}</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+    entry<span class="token operator">:</span> <span class="token punctuation">{</span>
+        entry<span class="token operator">:</span><span class="token string">'./src/entry.js'</span><span class="token punctuation">,</span> 
+       <span class="token comment">// entry2:'./src/entry2.js' </span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    output<span class="token operator">:</span> <span class="token punctuation">{</span>
+        path<span class="token operator">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        filename<span class="token operator">:</span> <span class="token string">'[name].js'</span><span class="token punctuation">,</span> <span class="token comment">//对应entry的属性名 </span>
+        publicPath<span class="token operator">:</span> website<span class="token punctuation">.</span>publicPath <span class="token comment">// 改为绝对路径</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    module<span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// style-loader(处理路径),css-loader(处理标签)</span>
+        rules<span class="token operator">:</span><span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+                test<span class="token operator">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+               <span class="token comment">// use: ['style-loader','css-loader']</span>
+                <span class="token comment">// </span>
+                use<span class="token operator">:</span> extractTextPlugin<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                    fallback<span class="token operator">:</span> <span class="token string">&quot;style-loader&quot;</span><span class="token punctuation">,</span>
+                    use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+                        loader<span class="token operator">:</span> <span class="token string">&quot;css-loader&quot;</span><span class="token punctuation">,</span> options<span class="token operator">:</span> <span class="token punctuation">{</span>importLoaders<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">&quot;postcss-loader&quot;</span><span class="token punctuation">]</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                test<span class="token operator">:</span><span class="token regex">/\.(png|jpg|gif)/</span><span class="token punctuation">,</span>
+                use<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>
+                    <span class="token comment">// url-loader主要把图片打包成base64</span>
+                    <span class="token comment">// 配合file-loader使用,file-loader可以解决引用路径的问题</span>
+                    loader<span class="token operator">:</span><span class="token string">'url-loader'</span><span class="token punctuation">,</span> 
+                    options<span class="token operator">:</span><span class="token punctuation">{</span>
+                        limit<span class="token operator">:</span> <span class="token number">5000</span><span class="token punctuation">,</span> <span class="token comment">//小于500000就生成base64</span>
+                        outputPath<span class="token operator">:</span> <span class="token string">'images/'</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                test<span class="token operator">:</span><span class="token regex">/\.(htm|html)$/i</span><span class="token punctuation">,</span>
+                use<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'html-withimg-loader'</span><span class="token punctuation">]</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+                test<span class="token operator">:</span> <span class="token regex">/\.less$/</span><span class="token punctuation">,</span>
+                <span class="token comment">// less和scss配置方法一样</span>
+                use<span class="token operator">:</span> extractTextPlugin<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+                    use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">{</span>
+                        loader<span class="token operator">:</span> <span class="token string">&quot;css-loader&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token string">&quot;postcss-loader&quot;</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                        loader<span class="token operator">:</span> <span class="token string">&quot;less-loader&quot;</span>
+                    <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    fallback<span class="token operator">:</span> <span class="token string">&quot;style-loader&quot;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token punctuation">{</span>
+                test<span class="token operator">:</span><span class="token regex">/\.js$/</span><span class="token punctuation">,</span>
+                use<span class="token operator">:</span><span class="token punctuation">{</span>
+                    loader<span class="token operator">:</span> <span class="token string">'babel-loader'</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                exclude<span class="token operator">:</span> <span class="token regex">/node_modules/</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token comment">//  new UglifyJs(), // 压缩代码</span>
+        <span class="token keyword">new</span> <span class="token class-name">htmlPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            minify<span class="token operator">:</span><span class="token punctuation">{</span>
+                removeAttributeQuotes<span class="token operator">:</span> <span class="token boolean">true</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            hash<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 哈希，不产生缓存</span>
+            template<span class="token operator">:</span> <span class="token string">'./src/index.html'</span> <span class="token comment">// 入口文件</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token comment">// 把css文件从js中分离</span>
+        <span class="token keyword">new</span> <span class="token class-name">extractTextPlugin</span><span class="token punctuation">(</span><span class="token string">&quot;css/index.css&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">new</span> <span class="token class-name">PurifyCSSPlugin</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+            paths<span class="token operator">:</span> glob<span class="token punctuation">.</span><span class="token function">sync</span><span class="token punctuation">(</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">&quot;src/*.html&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token comment">// 插件</span>
+    devServer<span class="token operator">:</span> <span class="token punctuation">{</span>
+        contentBase<span class="token operator">:</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span><span class="token string">'dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        host<span class="token operator">:</span><span class="token string">'localhost'</span><span class="token punctuation">,</span>
+        compress<span class="token operator">:</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token comment">// 是否启用服务器压缩</span>
+        port<span class="token operator">:</span><span class="token number">8081</span> <span class="token comment">// 端口</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br></div></div><p>我比较喜欢代码+注释这种方式来记录笔记，这样看起来不会那么乏味</p> <p>最后，在package.json的scripts中添加&quot;server&quot;: &quot;webpack-dev-server&quot;
+这个主要是可以通过<strong>npm run server</strong>方式来开启webpack提供的服务,热更新在新版本的webpack已经默认开启了</p> <h2 id="新增"><a href="#新增" class="header-anchor">#</a> 新增</h2> <p>使用css自动补全前缀插件,和babel编译插件,需要在文件根目录下，也就是和webpack.config.js同一路径下,分别创建**.postcss.config.js<strong>和</strong>.babelrc**配置文件</p> <p>在**.postcss.config.js**文件中,编写</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>module.exports = {
+    plugins: [
+        require('autoprefixer')
+    ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>在**.babelrc**文件中,编写</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>{
+    &quot;presets&quot;: [
+        &quot;env&quot;
+    ]
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>使用babel需要安装的插件有<strong>babel-core babel-preset-env</strong>
+以后还可以使用<strong>babel-plugin-transform-runtime</strong>这个比较有用的插件</p> <p><strong>注意</strong><br></p> <p>在webpack配置文件里，module里面用到的loader,plugins里面用到的插件，都需要用npm安装，如果网速不给力，可以使用cnpm或者配置npm</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>npm config set registry https://registry.npm.taobao.org --global
+npm config set disturl https://npm.taobao.org/dist --global
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h2 id="本篇小结"><a href="#本篇小结" class="header-anchor">#</a> 本篇小结</h2> <p>webpack3.0往后的版本配置简洁了不少，蛮好的，这篇暂时就写这么多，有空会继续更新~</p></div> <footer class="page-edit" style="display:none;"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">2022/11/17 10:04:04</span></div></footer> <!----> <!----> <!----></main> <!----></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div><!----></div></div>
+    <script src="/assets/js/app.69ab4a99.js" defer></script><script src="/assets/js/3.3b39e7a0.js" defer></script><script src="/assets/js/1.88acf310.js" defer></script><script src="/assets/js/25.b91a31fa.js" defer></script><script src="/assets/js/12.9e8433f0.js" defer></script>
+  </body>
+</html>
